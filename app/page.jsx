@@ -35,7 +35,7 @@ const FullpageWrapper = () => {
     anchors: ['home', 'about', 'skills', 'projects', 'contact'],
     menu: '#menu',
     css3: true,
-    scrollingSpeed: 1200,
+    scrollingSpeed: 1000,
     licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
     afterSlideLoad: handleSlideLoad,
     onLeave: handleLeave,
@@ -45,18 +45,20 @@ const FullpageWrapper = () => {
 
       return (
         <ReactFullpage.Wrapper>
-          <div className='section'>
-            <Home />
-          </div>
-          <div className='section parent-section'></div>
-          <div className='section'></div>
-          <div className='section'></div>
+          <section className='section'>
+            <Home direction={direction} />
+          </section>
         </ReactFullpage.Wrapper>
       );
     },
   };
 
-  return <ReactFullpage {...fullpageOptions} />;
+  return (
+    <>
+      <Overlay destination={destination} />
+      <ReactFullpage {...fullpageOptions} />
+    </>
+  );
 };
 
 export default FullpageWrapper;
