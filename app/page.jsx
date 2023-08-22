@@ -8,15 +8,16 @@ const FullpageWrapper = () => {
   const [slideIndexS, setSlideIndexS] = useState(0);
   const [sliding, setSliding] = useState(false);
   const [direction, setDirection] = useState(null);
-
+  const [destination, setDestination] = useState(null);
   const fullpageApiRef = useRef(null);
-  const handleSlideLoad = (origin, destination, direction) => {
+
+  const handleSlideLoad = (section, origin, destination, direction) => {
     setSlideIndexS(destination.index + 1);
   };
 
   const handleLeave = (origin, destination, direction) => {
     const fullpageApi = fullpageApiRef.current;
-    setDirection(direction);
+
     if (origin.index === 3 && !sliding) {
       if (direction === 'down' && slideIndexS < 3) {
         fullpageApi?.moveSlideRight();
@@ -28,7 +29,8 @@ const FullpageWrapper = () => {
     } else if (sliding) {
       return false;
     }
-    console.log(direction);
+    setDirection(direction);
+    setDestination(destination);
   };
 
   const fullpageOptions = {
