@@ -1,3 +1,9 @@
 {
-  "conventionalCommits.scopes": ["app", "assets", "dependencies", "animations"]
+  "conventionalCommits.scopes": [
+    "app",
+    "assets",
+    "dependencies",
+    "animations",
+    "layout"
+  ]
 }
