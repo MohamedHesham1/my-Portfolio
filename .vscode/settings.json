@@ -4,6 +4,7 @@
     "assets",
     "dependencies",
     "animations",
-    "layout"
+    "layout",
+    "style"
   ]
 }
