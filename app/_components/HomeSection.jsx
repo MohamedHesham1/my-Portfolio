@@ -8,7 +8,7 @@ function Home({ direction }) {
       <div className='flex h-screen items-center flex-wrap justify-between'>
         <div>
           <Image
-            className='top-[-380px] right-[1%] absolute rotate-90'
+            className='top-[-320px] right-[1%] absolute rotate-90'
             src='/images/side-dots.png'
             alt=''
             width={255}
@@ -50,33 +50,31 @@ function Home({ direction }) {
               : ''
           }  `}
         >
-          <h1 className='heading max-w-full text-primary text-5xl font-bold whitespace-pre'>
-            <div>
-              {Array.from(info[0].heading[0]).map((item, index) => {
-                return <AnimateRubber key={index}>{item}</AnimateRubber>;
-              })}
-            </div>
-            <div>
-              {Array.from(info[0].heading[1]).map((item, index) => {
-                return <AnimateRubber key={index}>{item}</AnimateRubber>;
-              })}
-            </div>
+          <h1 className='heading max-w-full text-primary text-5xl font-bold whitespace-pre '>
+            {Array.from(info[0].heading[0]).map((item, index) => {
+              return <AnimateRubber key={index}>{item}</AnimateRubber>;
+            })}
+            <br />
+            {Array.from(info[0].heading[1]).map((item, index) => {
+              return <AnimateRubber key={index}>{item}</AnimateRubber>;
+            })}
           </h1>
           <div className='text-justify max-w-[530px]'>
             <p className='opacity-70 text-xl my-5 font-light tracking-[1px]'>
               Front End Developer / JavaScript Fan / CSS Expert
             </p>
             <p className='my-3'>
-              I&apos;m all about crafting web experiences that blend beauty with
-              functionality.
+              I specialize in crafting web experiences that seamlessly blend
+              beauty and functionality.
             </p>
             <p className='my-3'>
               CSS maestro by day, I&apos;m constantly exploring the depths of
               JavaScript to make every interaction seamless.
             </p>
             <p className='my-3'>
-              Beyond code, I&apos;m a cinephile, rock head, and art aficionado –
-              the inspiration behind my digital canvas.
+              Beyond code, I&apos;m a Cinephile 🎥, rock head 🎸, and art
+              aficionado 🖼️– channeling the inspiration from these realms into
+              my digital canvas.
             </p>
           </div>
         </div>

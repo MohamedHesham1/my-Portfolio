@@ -15,7 +15,7 @@ function AnimateRubber({ children }) {
     <span
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className={`hover:text-secondary cursor-default inline-block text-5xl ${
+      className={`hover:text-secondary cursor-default inline-block  ${
         isHovered ? 'animate-rubberBand' : ''
       }`}
     >
