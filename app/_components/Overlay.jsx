@@ -20,7 +20,7 @@ function Overlay({ destination }) {
   return (
     <div>
       <div
-        className='logo z-20 fixed top-[40px] left-[50px] max-w-[140px] '
+        className='logo z-20 fixed top-[40px] left-[50px] max-w-[160px] '
         onClick={() => handleLinkClick(0)}
       >
         <a href='#home'>

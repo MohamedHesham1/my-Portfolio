@@ -4,6 +4,7 @@ import ReactFullpage from '@fullpage/react-fullpage';
 import { useRef, useState } from 'react';
 import About from './_components/AboutSection';
 import Home from './_components/HomeSection';
+import Overlay from './_components/Overlay';
 
 const FullpageWrapper = () => {
   const [slideIndexS, setSlideIndexS] = useState(0);
