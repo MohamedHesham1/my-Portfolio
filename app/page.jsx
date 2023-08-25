@@ -2,6 +2,7 @@
 import React, { useState, useRef } from 'react';
 import ReactFullpage from '@fullpage/react-fullpage';
 import { useRef, useState } from 'react';
+import About from './_components/AboutSection';
 import Home from './_components/HomeSection';
 
 const FullpageWrapper = () => {
@@ -37,7 +38,7 @@ const FullpageWrapper = () => {
     anchors: ['home', 'about', 'skills', 'projects', 'contact'],
     menu: '#menu',
     css3: true,
-    scrollingSpeed: 1000,
+    scrollingSpeed: 1200,
     licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
     afterSlideLoad: handleSlideLoad,
     onLeave: handleLeave,
@@ -49,6 +50,9 @@ const FullpageWrapper = () => {
         <ReactFullpage.Wrapper>
           <section className='section'>
             <Home direction={direction} />
+          </section>
+          <section className='section'>
+            <About direction={direction} destination={destination} />
           </section>
         </ReactFullpage.Wrapper>
       );
