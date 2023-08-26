@@ -2,8 +2,6 @@ import info from '@/public/data/info.json';
 import Image from 'next/image';
 import AnimateRubber from './utils/AnimateRubber';
 function About({ direction, destination }) {
-  console.log(destination);
-  console.log(direction);
   return (
     <div className='container overflow-x-hidden'>
       <div className='flex h-screen items-center flex-wrap justify-between overflow-hidden'>
@@ -20,7 +18,7 @@ function About({ direction, destination }) {
               : ''
           }  `}
         >
-          <h2 className='heading max-w-full text-primary text-5xl font-bold whitespace-pre'>
+          <h2 className='heading max-w-full text-primary font-bold whitespace-pre'>
             {Array.from(info[1].heading[0]).map((item, index) => {
               return <AnimateRubber key={index}>{item}</AnimateRubber>;
             })}
@@ -31,14 +29,14 @@ function About({ direction, destination }) {
               })}
               <Image
                 src='/images/darth-vader.svg'
-                className='w-9 h-9 right-[-42px] absolute top-[19px]'
+                className='w-10  right-[-46px] absolute top-[26px]'
                 alt=''
                 width={64}
                 height={64}
               />
             </span>
           </h2>
-          <div className='text-justify max-w-[530px]'>
+          <div className='text-justify max-w-[530px] text-lg'>
             <p className='py-8 pe-28'>
               🚀I engineer solutions for design challenges, create intuitive
               interfaces, and craft dynamic web apps. Transforming concepts into

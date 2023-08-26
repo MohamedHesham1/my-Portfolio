@@ -50,7 +50,7 @@ function Home({ direction }) {
               : ''
           }  `}
         >
-          <h1 className='heading max-w-full text-primary text-5xl font-bold whitespace-pre '>
+          <h1 className='heading max-w-full text-primary text-6xl font-bold whitespace-pre '>
             {Array.from(info[0].heading[0]).map((item, index) => {
               return <AnimateRubber key={index}>{item}</AnimateRubber>;
             })}
@@ -59,7 +59,7 @@ function Home({ direction }) {
               return <AnimateRubber key={index}>{item}</AnimateRubber>;
             })}
           </h1>
-          <div className='text-justify max-w-[530px]'>
+          <div className='text-justify text-lg max-w-[530px]'>
             <p className='opacity-70 text-xl my-5 font-light tracking-[1px]'>
               Front End Developer / JavaScript Fan / CSS Expert
             </p>
@@ -68,8 +68,8 @@ function Home({ direction }) {
               beauty and functionality.
             </p>
             <p className='my-3'>
-              CSS maestro by day, I&apos;m constantly exploring the depths of
-              JavaScript to make every interaction seamless.
+              A CSS maestro by day, I&apos;m constantly exploring the depths of
+              JavaScript craft seamless interactions.
             </p>
             <p className='my-3'>
               Beyond code, I&apos;m a Cinephile 🎥, rock head 🎸, and art
@@ -89,7 +89,6 @@ function Home({ direction }) {
         >
           <Image
             className='max-w-[600px] drop-shadow-[-12px_5px_50px_rgba(28,95,154,0.4)]'
-            priority
             src='/images/my-photo.png'
             alt="Mohamed's photo"
             width={2000}
