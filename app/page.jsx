@@ -1,10 +1,10 @@
 'use client';
-import React, { useState, useRef } from 'react';
 import ReactFullpage from '@fullpage/react-fullpage';
 import { useRef, useState } from 'react';
 import About from './_components/AboutSection';
 import Home from './_components/HomeSection';
 import Overlay from './_components/Overlay';
+import Skills from './_components/SkillsSection';
 
 const FullpageWrapper = () => {
   const [slideIndexS, setSlideIndexS] = useState(0);
@@ -54,6 +54,9 @@ const FullpageWrapper = () => {
           </section>
           <section className='section'>
             <About direction={direction} destination={destination} />
+          </section>
+          <section className='section'>
+            <Skills direction={direction} destination={destination} />
           </section>
         </ReactFullpage.Wrapper>
       );
