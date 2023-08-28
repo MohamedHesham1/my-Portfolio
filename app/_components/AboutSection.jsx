@@ -1,6 +1,7 @@
 import info from '@/public/data/info.json';
 import Image from 'next/image';
 import AnimateRubber from './utils/AnimateRubber';
+import Rectangle from './utils/Rectangle';
 function About({ direction, destination }) {
   return (
     <div className='container overflow-x-hidden'>
@@ -45,7 +46,7 @@ function About({ direction, destination }) {
             </p>
           </div>
           <div className='text-[#9c27b0] text-lg font-semibold'>
-            <a href='#skills' className='flex items-center group w-1/2 '>
+            <a href='#skills' className='inline-flex items-center group  '>
               My skills
               <Image
                 src='/images/arrow-pink.svg'
@@ -96,9 +97,7 @@ function About({ direction, destination }) {
         width={518}
         height={577}
       />
-      <div className='rectangle right-[-550px]'>
-        <Image src='/images/rectangle.svg' alt='' width={839} height={829} />
-      </div>
+      <Rectangle />
     </div>
   );
 }

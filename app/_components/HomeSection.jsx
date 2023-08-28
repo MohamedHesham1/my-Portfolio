@@ -1,6 +1,7 @@
 import info from '@/public/data/info.json';
 import Image from 'next/image';
 import AnimateRubber from './utils/AnimateRubber';
+import RectangleRotate from './utils/RectangleRotate';
 
 function Home({ direction }) {
   return (
@@ -90,20 +91,14 @@ function Home({ direction }) {
           <Image
             className='max-w-[600px] drop-shadow-[-12px_5px_50px_rgba(28,95,154,0.4)]'
             src='/images/my-photo.png'
+            priority
             alt="Mohamed's photo"
             width={2000}
             height={2000}
           />
         </div>
       </div>
-      <div className='rectangle rotate left-[-550px]'>
-        <Image
-          src='/images/rectangle-rotate.svg'
-          alt=''
-          width={903}
-          height={887}
-        />
-      </div>
+      <RectangleRotate />
     </div>
   );
 }

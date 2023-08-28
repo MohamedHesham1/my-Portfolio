@@ -2,6 +2,7 @@ import info from '@/public/data/info.json';
 import AnimateRubber from './utils/AnimateRubber';
 import Image from 'next/image';
 import Link from 'next/link';
+import RectangleRotate from './utils/RectangleRotate';
 
 function Skills({ direction, destination }) {
   return (
@@ -349,14 +350,7 @@ function Skills({ direction, destination }) {
         </ul>
       </div>
 
-      <div className='rectangle rotate left-[-550px]'>
-        <Image
-          src='/images/rectangle-rotate.svg'
-          alt=''
-          width={903}
-          height={887}
-        />
-      </div>
+      <RectangleRotate />
     </div>
   );
 }
