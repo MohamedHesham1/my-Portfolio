@@ -45,9 +45,9 @@ function Home({ direction }) {
         <div
           className={`flex-1 ${
             direction === 'down'
-              ? 'animate-fadeOutUpBig animate-duration-[3s]   '
+              ? 'animate-fadeOutUpBig animate-duration-[3s]'
               : direction === 'up'
-              ? 'animate-slideInDown animate-duration-[ 0.7s] animate-delay-[0.2s] '
+              ? 'animate-slideInDown animate-duration-[0.7s] animate-delay-[0.2s]'
               : ''
           }  `}
         >
@@ -60,7 +60,7 @@ function Home({ direction }) {
               return <AnimateRubber key={index}>{item}</AnimateRubber>;
             })}
           </h1>
-          <div className='text-justify text-lg max-w-[530px]'>
+          <div className='text-left text-lg max-w-[510px]'>
             <p className='opacity-70 text-xl my-5 font-light tracking-[1px]'>
               Front End Developer / JavaScript Fan / CSS Expert
             </p>
@@ -89,7 +89,7 @@ function Home({ direction }) {
           }  `}
         >
           <Image
-            className='max-w-[600px] drop-shadow-[-12px_5px_50px_rgba(28,95,154,0.4)]'
+            className='max-w-[600px] w-full drop-shadow-[-12px_5px_50px_rgba(28,95,154,0.4)]'
             src='/images/my-photo.png'
             priority
             alt="Mohamed's photo"

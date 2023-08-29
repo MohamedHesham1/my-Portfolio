@@ -9,19 +9,19 @@ function Skills({ direction, destination }) {
     <div className='container overflow-hidden'>
       <div className='skills-section'>
         <div
-          className={`text-wrapper text-center text-lg ${
+          className={`text-wrapper text-center text-[18px] leading-6 ${
             direction === 'down' && destination.index === 2
               ? 'animate-fadeInUp animate-duration-[1s] animate-delay-[0.2s]'
               : direction === 'down' && destination.index === 3
               ? 'animate-fadeOutUpBig animate-duration-[3s] animate-delay-[0.2s]'
               : direction === 'up' && destination.index === 1
-              ? 'animate-fadeOut animate-duration-[1s]  '
+              ? 'animate-fadeOut animate-duration-[1s]'
               : direction === 'up' && destination.index === 2
               ? 'animate-fadeIn animate-duration-1000  animate-delay-[0.2s]'
               : ''
           } `}
         >
-          <h3 className='subtitle text-lg uppercase'>
+          <h3 className='subtitle uppercase'>
             Where challenges arise, creativity thrives.
           </h3>
           <h2 className='heading max-w-full text-primary font-bold whitespace-pre  mt-[10px] mb-6'>
@@ -38,14 +38,14 @@ function Skills({ direction, destination }) {
             dynamic and rich web applications. I rely on frameworks such as Ant
             Design and Chakra UI to deliver visually appealing and user-friendly
             experiences. My experience extends to using Next.js for server-side
-            rendering and Node and Express for backend development. Visit my
-            LinkedIn for more details.
+            rendering and Node and Express for backend development.
           </p>
           <p>
             Visit my
             <Link
               className='text-secondary px-2 hover:underline'
               href='https://www.linkedin.com/in/mohamed-hesham-hassan/'
+              target='_blank'
             >
               Linkedin
             </Link>
