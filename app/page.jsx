@@ -3,7 +3,10 @@ import ReactFullpage from '@fullpage/react-fullpage';
 import { useRef, useState } from 'react';
 import About from './_components/AboutSection';
 import Home from './_components/HomeSection';
+import IntroSlide from './_components/IntroSlide';
 import Overlay from './_components/Overlay';
+import ProjectSlide1 from './_components/ProjectSlide1';
+import ProjectSlide2 from './_components/ProjectSlide2';
 import Skills from './_components/SkillsSection';
 
 const FullpageWrapper = () => {
@@ -40,6 +43,7 @@ const FullpageWrapper = () => {
     menu: '#menu',
     css3: true,
     scrollingSpeed: 1200,
+    slidesNavigation: true,
     licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
     afterSlideLoad: handleSlideLoad,
     onLeave: handleLeave,
@@ -57,6 +61,29 @@ const FullpageWrapper = () => {
           </section>
           <section className='section'>
             <Skills direction={direction} destination={destination} />
+          </section>
+          <section className='section'>
+            <div className='slide'>
+              <IntroSlide
+                direction={direction}
+                destination={destination}
+                slideIndexS={slideIndexS}
+              />
+            </div>
+            <div className='slide'>
+              <ProjectSlide1
+                direction={direction}
+                destination={destination}
+                slideIndexS={slideIndexS}
+              />
+            </div>
+            <div className='slide'>
+              <ProjectSlide2
+                direction={direction}
+                destination={destination}
+                slideIndexS={slideIndexS}
+              />
+            </div>
           </section>
         </ReactFullpage.Wrapper>
       );
