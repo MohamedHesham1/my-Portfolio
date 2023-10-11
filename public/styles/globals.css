@@ -54,7 +54,6 @@ body {
 
 .side-bar {
   align-items: flex-end;
-  height: calc(100vh - 2rem);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
