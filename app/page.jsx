@@ -1,6 +1,6 @@
 'use client';
 import ReactFullpage from '@fullpage/react-fullpage';
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import About from './_components/AboutSection';
 import Home from './_components/HomeSection';
 import IntroSlide from './_components/IntroSlide';
@@ -8,12 +8,14 @@ import Overlay from './_components/Overlay';
 import ProjectSlide1 from './_components/ProjectSlide1';
 import ProjectSlide2 from './_components/ProjectSlide2';
 import Skills from './_components/SkillsSection';
+import ContactSection from './_components/ContactSection';
 
 const FullpageWrapper = () => {
   const [slideIndexS, setSlideIndexS] = useState(0);
   const [sliding, setSliding] = useState(false);
   const [direction, setDirection] = useState(null);
   const [destination, setDestination] = useState(null);
+
   const fullpageApiRef = useRef(null);
 
   const handleSlideLoad = (section, origin, destination, direction) => {
@@ -22,7 +24,6 @@ const FullpageWrapper = () => {
 
   const handleLeave = (origin, destination, direction) => {
     const fullpageApi = fullpageApiRef.current;
-
     if (origin.index === 3 && !sliding) {
       if (direction === 'down' && slideIndexS < 3) {
         fullpageApi?.moveSlideRight();
@@ -84,6 +85,9 @@ const FullpageWrapper = () => {
                 slideIndexS={slideIndexS}
               />
             </div>
+          </section>
+          <section className='section'>
+            <ContactSection direction={direction} destination={destination} />
           </section>
         </ReactFullpage.Wrapper>
       );
