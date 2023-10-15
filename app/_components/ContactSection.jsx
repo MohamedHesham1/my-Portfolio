@@ -1,24 +1,23 @@
-import info from '@/public/data/info.json';
 import Image from 'next/image';
-import AnimateRubber from './utils/AnimateRubber';
-import RectangleRotate from './utils/RectangleRotate';
-import SpinningGlobe from './utils/Globe';
 import Link from 'next/link';
+import Globe from './utils/GlobeWrapper';
+import RectangleRotate from './utils/RectangleRotate';
 
 function ContactSection({ direction, destination, slideIndexS }) {
   console.log(slideIndexS, destination?.anchor);
+
   return (
     <div className=' w-screen overflow-hidden'>
       <div className='container flex h-screen items-center relative'>
         <div className='image-wrapper caret-[transparent]'>
-          <SpinningGlobe />
+          <Globe />
         </div>
         <div className={'text-wrapper max-w-[350px] text-[18px]'}>
           <div
             className={` ${
               direction && slideIndexS === 2
                 ? 'animate-slideInRight animate-duration-[0.8s] animate-delay-[0.8s]'
-                : direction && window.location.hash === '#projects/1'
+                : !direction
                 ? 'animate-fadeOutRightBig animate-duration-[1.6s]'
                 : ''
             } `}

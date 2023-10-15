@@ -1,7 +1,5 @@
 import { useEffect, useRef } from 'react';
-import dynamic from 'next/dynamic';
-
-const Globe = dynamic(() => import('react-globe.gl'), { ssr: false });
+import Globe from 'react-globe.gl';
 
 const SpinningGlobe = () => {
   const globeEl = useRef();
