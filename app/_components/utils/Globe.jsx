@@ -1,13 +1,17 @@
 import { useEffect, useRef } from 'react';
-import Globe from 'react-globe.gl';
+import dynamic from 'next/dynamic';
+
+const Globe = dynamic(() => import('react-globe.gl'), { ssr: false });
 
 const SpinningGlobe = () => {
   const globeEl = useRef();
 
   useEffect(() => {
-    globeEl.current.controls().autoRotate = true;
-    globeEl.current.controls().autoRotateSpeed = 0.8;
-    globeEl.current.controls().enableZoom = false;
+    if (globeEl.current) {
+      globeEl.current.controls().autoRotate = true;
+      globeEl.current.controls().autoRotateSpeed = 0.8;
+      globeEl.current.controls().enableZoom = false;
+    }
   }, []);
 
   const places = [{ name: 'Cairo', latitude: 30.0444, longitude: 31.2357 }];
