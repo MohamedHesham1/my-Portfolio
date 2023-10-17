@@ -2,7 +2,7 @@ import info from '@/public/data/info.json';
 import Image from 'next/image';
 import AnimateRubber from './utils/AnimateRubber';
 
-function IntroSlide({ direction, destination, slideIndexS }) {
+function ProjectSlideIntro({ direction, destination, slideIndexS }) {
   return (
     <div className='container flex h-screen items-center '>
       <div
@@ -108,4 +108,4 @@ function IntroSlide({ direction, destination, slideIndexS }) {
   );
 }
 
-export default IntroSlide;
+export default ProjectSlideIntro;
