@@ -1,34 +1,35 @@
 'use client';
 import ReactFullpage from '@fullpage/react-fullpage';
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useState } from 'react';
 import About from './_components/AboutSection';
+import ContactSection from './_components/ContactSection';
 import Home from './_components/HomeSection';
-import IntroSlide from './_components/IntroSlide';
 import Overlay from './_components/Overlay';
 import ProjectSlide1 from './_components/ProjectSlide1';
 import ProjectSlide2 from './_components/ProjectSlide2';
+import ProjectSlideIntro from './_components/ProjectSlideIntro';
 import Skills from './_components/SkillsSection';
-import ContactSection from './_components/ContactSection';
 
 const FullpageWrapper = () => {
   const [slideIndexS, setSlideIndexS] = useState(0);
   const [sliding, setSliding] = useState(false);
   const [direction, setDirection] = useState(null);
   const [destination, setDestination] = useState(null);
+  const [navigate, setNavigate] = useState(false);
 
   const fullpageApiRef = useRef(null);
 
   const handleSlideLoad = (section, origin, destination, direction) => {
     setSlideIndexS(destination.index + 1);
   };
-
   const handleLeave = (origin, destination, direction) => {
     const fullpageApi = fullpageApiRef.current;
+    setNavigate(false);
     if (origin.index === 3 && !sliding) {
-      if (direction === 'down' && slideIndexS < 3) {
+      if (direction === 'down' && slideIndexS < 3 && !navigate) {
         fullpageApi?.moveSlideRight();
         return false;
-      } else if (direction === 'up' && slideIndexS > 1) {
+      } else if (direction === 'up' && slideIndexS > 1 && !navigate) {
         fullpageApi?.moveSlideLeft();
         return false;
       }
@@ -65,7 +66,7 @@ const FullpageWrapper = () => {
           </section>
           <section className='section'>
             <div className='slide'>
-              <IntroSlide
+              <ProjectSlideIntro
                 direction={direction}
                 destination={destination}
                 slideIndexS={slideIndexS}
@@ -96,7 +97,7 @@ const FullpageWrapper = () => {
 
   return (
     <>
-      <Overlay destination={destination} />
+      <Overlay destination={destination} setNavigate={setNavigate} />
       <ReactFullpage {...fullpageOptions} />
     </>
   );

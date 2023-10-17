@@ -3,11 +3,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
-function Overlay({ destination }) {
+function Overlay({ destination, setNavigate }) {
   const [linePosition, setLinePosition] = useState(0);
   const [hoveredIndex, setHoveredIndex] = useState(null);
+
   const handleLinkClick = (targetPosition) => {
     setLinePosition(targetPosition);
+    setNavigate(true);
   };
 
   useEffect(() => {
@@ -21,7 +23,9 @@ function Overlay({ destination }) {
     <div>
       <div
         className='logo z-20 fixed top-[40px] left-[50px] max-w-[160px] '
-        onClick={() => handleLinkClick(0)}
+        onClick={() => {
+          handleLinkClick(0);
+        }}
       >
         <a href='#home'>
           <Image src='/images/logo2.png' alt='logo' width={1724} height={648} />

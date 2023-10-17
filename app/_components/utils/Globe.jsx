@@ -7,7 +7,7 @@ const SpinningGlobe = () => {
   useEffect(() => {
     if (globeEl.current) {
       globeEl.current.controls().autoRotate = true;
-      globeEl.current.controls().autoRotateSpeed = 0.8;
+      globeEl.current.controls().autoRotateSpeed = 1.2;
       globeEl.current.controls().enableZoom = false;
     }
   }, []);
