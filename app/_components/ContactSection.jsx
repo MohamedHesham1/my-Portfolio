@@ -9,19 +9,25 @@ function ContactSection({ direction, destination, slideIndexS }) {
   return (
     <div className=' w-screen overflow-hidden'>
       <div className='container flex h-screen items-center relative'>
-        <div className='image-wrapper caret-[transparent]'>
+        <div
+          className={`image-wrapper caret-[transparent] ${
+            direction === 'down'
+              ? 'animate-fadeIn animate-duration-[3s] animate-delay-[0.6s]'
+              : direction === 'up'
+              ? 'animate-fadeOutDownBig animate-duration-[3s] animate-delay-[0.2s]'
+              : ''
+          }`}
+        >
           <Globe />
         </div>
-        <div className={'text-wrapper max-w-[350px] text-[18px]'}>
-          <div
-            className={` ${
-              direction && slideIndexS === 2
-                ? 'animate-slideInRight animate-duration-[0.8s] animate-delay-[0.8s]'
-                : !direction
-                ? 'animate-fadeOutRightBig animate-duration-[1.6s]'
-                : ''
-            } `}
-          >
+        <div
+          className={`text-wrapper max-w-[350px] text-[18px] ${
+            direction === 'down'
+              ? 'animate-slideInUp animate-duration-[1s] animate-delay-[0.2s]'
+              : ''
+          }  `}
+        >
+          <div>
             <p className='leading-loose text-justify'>
               Have a project in mind? Or just want to connect? I am all ears!
               Reach out via email at
@@ -50,7 +56,7 @@ function ContactSection({ direction, destination, slideIndexS }) {
           direction === 'down'
             ? 'animate-slideInUp animate-duration-[1s] animate-delay-[0.2s]'
             : direction === 'up'
-            ? 'animate-fadeOutDownBig animate-duration-[ 3s] animate-delay-[0.2s]'
+            ? 'animate-fadeOutDownBig animate-duration-[3s] animate-delay-[0.2s]'
             : ''
         }  `}
         src='/images/white_cube1.png'
