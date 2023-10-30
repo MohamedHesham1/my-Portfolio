@@ -6,21 +6,21 @@ import RectangleRotate from './utils/RectangleRotate';
 function Home({ direction }) {
   return (
     <div className='container overflow-x-hidden'>
-      <div className='flex h-screen items-center flex-wrap justify-between'>
+      <div className='flex h-screen items-center justify-between md:flex-col-reverse sm:items-stretch md:relative'>
         <div>
           <Image
-            className='top-[-320px] right-[1%] absolute rotate-90'
+            className='absolute top-[-320px] right-[1%] rotate-90 md:top-[-504px]'
             src='/images/side-dots.png'
             alt=''
             width={255}
             height={1678}
           />
           <Image
-            className={`absolute opacity-70 max-w-[150px] top-[170px] left-[45%]  ${
+            className={`absolute opacity-70 max-w-[150px] top-[170px] left-[45%] md:hidden ${
               direction === 'down'
                 ? 'animate-fadeOutUp'
                 : direction === 'up'
-                ? 'animate-fadeInDownBig  animate-delay-[0.3s]'
+                ? 'animate-fadeInDownBig animate-delay-[0.3s]'
                 : ''
             }  `}
             src='/images/blue_romb2.png'
@@ -29,7 +29,7 @@ function Home({ direction }) {
             height={441}
           />
           <Image
-            className={`absolute opacity-70 max-w-[200px] bottom-[40px] left-[17%] ${
+            className={`absolute opacity-70 max-w-[200px] bottom-[40px] left-[17%] md:hidden ${
               direction === 'down'
                 ? 'animate-fadeOutUpBig animate-duration-[3s] animate-delay-[0.4s]'
                 : direction === 'up'
@@ -51,7 +51,7 @@ function Home({ direction }) {
               : ''
           }  `}
         >
-          <h1 className='heading max-w-full text-primary text-6xl font-bold whitespace-pre '>
+          <h1 className='heading max-w-full text-primary font-bold whitespace-pre sm:text-[3rem]'>
             {Array.from(info[0].heading[0]).map((item, index) => {
               return <AnimateRubber key={index}>{item}</AnimateRubber>;
             })}
@@ -80,7 +80,7 @@ function Home({ direction }) {
           </div>
         </div>
         <div
-          className={`flex-1  ${
+          className={`flex-1 md:m-[122px_auto_0px] ${
             direction === 'down'
               ? 'animate-fadeOutUpBig animate-duration-[3s] animate-delay-[0.2s]'
               : direction === 'up'
@@ -89,7 +89,8 @@ function Home({ direction }) {
           }  `}
         >
           <Image
-            className='max-w-[600px] w-full drop-shadow-[-12px_5px_50px_rgba(28,95,154,0.4)]'
+            className='max-w-[600px] w-full drop-shadow-[-12px_5px_50px_rgba(28,95,154,0.4)]
+            md:max-w-[400px]'
             src='/images/my-photo.png'
             priority
             alt="Mohamed's photo"

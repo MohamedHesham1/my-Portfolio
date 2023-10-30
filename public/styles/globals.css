@@ -2,16 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
+/* layout */
+html {
+  transition: font-size 0.3s ease-in-out;
+}
 body {
   background: #141416;
 }
 
 .heading {
-  line-height: 65px;
-  font-size: 60px;
+  line-height: 4.0625rem;
+  font-size: 3.75rem;
 }
+
 .section {
   color: #f0f8ff;
+}
+
+.container {
+  -webkit-font-smoothing: antialiased;
+  line-height: 24px;
+  width: 1440px;
+  max-width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+  z-index: 101;
 }
 
 .rectangle {
@@ -41,17 +56,8 @@ body {
   width: 70px;
   height: 70px;
 }
-/* layout */
-.container {
-  -webkit-font-smoothing: antialiased;
-  line-height: 24px;
-  width: 1440px;
-  max-width: 100%;
-  padding: 0 15px;
-  margin: 0 auto;
-  z-index: 101;
-}
 
+/* sidebar */
 .side-bar {
   align-items: flex-end;
   display: flex;
@@ -144,4 +150,41 @@ body {
 }
 .fp-slidesNav.fp-bottom {
   bottom: 50px !important;
+}
+
+/* Media queries */
+@media screen and (max-width: 1140px) {
+  html {
+    font-size: 14px;
+  }
+}
+/* disable animation for small screens */
+@media screen and (max-width: 767px) {
+  html {
+    font-size: 13px;
+  }
+  .fullpage .fp-section,
+  .h-screen,
+  .section,
+  .slide {
+    height: auto !important;
+    min-height: auto !important;
+  }
+  .section {
+    margin-bottom: 20rem;
+  }
+  .animate-fadeIn,
+  .animate-fadeInDownBig,
+  .animate-fadeInUp,
+  .animate-slideInDown,
+  .animate-slideInUp,
+  .animate-fadeOutUp,
+  .animate-fadeOutUpBig,
+  .animate-fadeOutDown,
+  .animate-fadeOutDownBig,
+  .animate-fadeOutRightBig,
+  .animate-fadeOutLeftBig,
+  .animate-fadeOut {
+    animation: none !important;
+  }
 }
