@@ -3,7 +3,6 @@ import Image from 'next/image';
 import AnimateRubber from './utils/AnimateRubber';
 
 function ProjectSlide2({ direction, destination, slideIndexS }) {
-  console.log(slideIndexS, destination?.anchor);
   return (
     <div className=' w-screen overflow-hidden'>
       <div className='container flex h-screen items-center justify-between relative'>

@@ -10,13 +10,12 @@ import ProjectSlide2 from './_components/ProjectSlide2';
 import ProjectSlideIntro from './_components/ProjectSlideIntro';
 import Skills from './_components/SkillsSection';
 
-const FullpageWrapper = () => {
+const App = () => {
   const [slideIndexS, setSlideIndexS] = useState(0);
   const [sliding, setSliding] = useState(false);
   const [direction, setDirection] = useState(null);
   const [destination, setDestination] = useState(null);
   const [navigate, setNavigate] = useState(false);
-
   const fullpageApiRef = useRef(null);
 
   const handleSlideLoad = (section, origin, destination, direction) => {
@@ -40,68 +39,68 @@ const FullpageWrapper = () => {
     setDestination(destination);
   };
 
-  const fullpageOptions = {
-    anchors: ['home', 'about', 'skills', 'projects', 'contact'],
-    menu: '#menu',
-    css3: true,
-    scrollingSpeed: 1200,
-    slidesNavigation: true,
-    responsiveWidth: 800,
-    licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
-    afterSlideLoad: handleSlideLoad,
-    onLeave: handleLeave,
-    render: ({ fullpageApi }) => {
-      // Store the fullpageApi reference in the ref
-      fullpageApiRef.current = fullpageApi;
-
-      return (
-        <ReactFullpage.Wrapper>
-          <section className='section'>
-            <Home direction={direction} />
-          </section>
-          <section className='section'>
-            <About direction={direction} destination={destination} />
-          </section>
-          <section className='section'>
-            <Skills direction={direction} destination={destination} />
-          </section>
-          <section className='section'>
-            <div className='slide'>
-              <ProjectSlideIntro
-                direction={direction}
-                destination={destination}
-                slideIndexS={slideIndexS}
-              />
-            </div>
-            <div className='slide'>
-              <ProjectSlide1
-                direction={direction}
-                destination={destination}
-                slideIndexS={slideIndexS}
-              />
-            </div>
-            <div className='slide'>
-              <ProjectSlide2
-                direction={direction}
-                destination={destination}
-                slideIndexS={slideIndexS}
-              />
-            </div>
-          </section>
-          <section className='section'>
-            <ContactSection direction={direction} destination={destination} />
-          </section>
-        </ReactFullpage.Wrapper>
-      );
-    },
-  };
-
   return (
     <>
       <Overlay destination={destination} setNavigate={setNavigate} />
-      <ReactFullpage {...fullpageOptions} />
+      <ReactFullpage
+        anchors={['home', 'about', 'skills', 'projects', 'contact']}
+        menu='#menu'
+        responsiveWidth={800}
+        css3={true}
+        scrollingSpeed={1200}
+        slidesNavigation={true}
+        licenseKey={'OPEN-SOURCE-GPLV3-LICENSE'}
+        afterSlideLoad={handleSlideLoad}
+        onLeave={handleLeave}
+        render={({ fullpageApi }) => {
+          fullpageApiRef.current = fullpageApi;
+
+          return (
+            <ReactFullpage.Wrapper>
+              <section className='section fp-auto-height-responsive'>
+                <Home direction={direction} />
+              </section>
+              <section className='section fp-auto-height-responsive'>
+                <About direction={direction} destination={destination} />
+              </section>
+              <section className='section fp-auto-height-responsive'>
+                <Skills direction={direction} destination={destination} />
+              </section>
+              <section className='section fp-auto-height-responsive'>
+                <div className='slide'>
+                  <ProjectSlideIntro
+                    direction={direction}
+                    destination={destination}
+                    slideIndexS={slideIndexS}
+                  />
+                </div>
+                <div className='slide'>
+                  <ProjectSlide1
+                    direction={direction}
+                    destination={destination}
+                    slideIndexS={slideIndexS}
+                  />
+                </div>
+                <div className='slide'>
+                  <ProjectSlide2
+                    direction={direction}
+                    destination={destination}
+                    slideIndexS={slideIndexS}
+                  />
+                </div>
+              </section>
+              <section className='section fp-auto-height-responsive'>
+                <ContactSection
+                  direction={direction}
+                  destination={destination}
+                />
+              </section>
+            </ReactFullpage.Wrapper>
+          );
+        }}
+      />
     </>
   );
 };
 
-export default FullpageWrapper;
+export default App;

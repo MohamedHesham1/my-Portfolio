@@ -4,8 +4,6 @@ import Globe from './utils/GlobeWrapper';
 import RectangleRotate from './utils/RectangleRotate';
 
 function ContactSection({ direction, destination, slideIndexS }) {
-  console.log(slideIndexS, destination?.anchor);
-
   return (
     <div className=' w-screen overflow-hidden'>
       <div className='container flex h-screen items-center relative'>
