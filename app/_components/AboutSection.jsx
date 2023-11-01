@@ -5,7 +5,7 @@ import Rectangle from './utils/Rectangle';
 function About({ direction, destination }) {
   return (
     <div className='container overflow-x-hidden'>
-      <div className='flex h-screen items-center flex-wrap justify-between overflow-hidden'>
+      <div className='flex h-screen items-center flex-wrap justify-between overflow-hidden md:flex-col-reverse'>
         <div
           className={`text-wrapper flex-1 ${
             direction === 'down' && destination.index === 1
@@ -59,7 +59,7 @@ function About({ direction, destination }) {
           </div>
         </div>
         <div
-          className={`image-wrapper flex-1 pe-[100px] mt-8 mx-auto ${
+          className={`image-wrapper flex-1 pe-[100px] mt-8 mx-auto md:max-w-[500px] ${
             direction === 'down' && destination.index === 1
               ? 'animate-slideInUp animate-duration-[1s] animate-delay-[0.5s]'
               : direction === 'down' && destination.index === 2
@@ -81,7 +81,7 @@ function About({ direction, destination }) {
         </div>
       </div>
       <Image
-        className={`absolute opacity-70 max-w-[200px] bottom-[20px] left-[730px]  ${
+        className={`absolute opacity-70 max-w-[200px] bottom-[20px] left-[730px] md:hidden ${
           direction === 'down' && destination.index === 1
             ? 'animate-slideInUp animate-duration-[0.8s] animate-delay-[0.4s]'
             : direction === 'down' && destination.index === 2

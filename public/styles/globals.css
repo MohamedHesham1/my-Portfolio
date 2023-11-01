@@ -66,7 +66,6 @@ body {
   right: 3.125rem;
   height: calc(100vh - 6.25rem);
 }
-
 .side-nav::before {
   content: '';
   position: absolute;
@@ -80,23 +79,23 @@ body {
   background-color: #f0f8ff;
 }
 
+/* line placement on hover */
 .side-nav li:nth-child(1):hover ~ .line {
   transform: translateY(0px) !important;
 }
 .side-nav li:nth-child(2):hover ~ .line {
   transform: translateY(50px) !important;
 }
-
 .side-nav li:nth-child(3):hover ~ .line {
   transform: translateY(100px) !important;
 }
-
 .side-nav li:nth-child(4):hover ~ .line {
   transform: translateY(150px) !important;
 }
 .side-nav li:nth-child(5):hover ~ .line {
   transform: translateY(200px) !important;
 }
+
 .nav-link {
   width: 50px;
   height: 50px;

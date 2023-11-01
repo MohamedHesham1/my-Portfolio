@@ -46,6 +46,7 @@ const FullpageWrapper = () => {
     css3: true,
     scrollingSpeed: 1200,
     slidesNavigation: true,
+    responsiveWidth: 800,
     licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
     afterSlideLoad: handleSlideLoad,
     onLeave: handleLeave,

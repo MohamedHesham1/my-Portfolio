@@ -4,8 +4,8 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
 function Overlay({ destination, setNavigate }) {
+  // sets the line position in the side-bar
   const [linePosition, setLinePosition] = useState(0);
-  const [hoveredIndex, setHoveredIndex] = useState(null);
 
   const handleLinkClick = (targetPosition) => {
     setLinePosition(targetPosition);
@@ -20,9 +20,9 @@ function Overlay({ destination, setNavigate }) {
   }, [destination]);
 
   return (
-    <div>
-      <div
-        className='logo z-20 fixed top-[40px] left-[50px] max-w-[160px] '
+    <>
+      <header
+        className='z-20 fixed top-[40px] left-[50px] max-w-[160px] md:top-[20px] md:left-[30px]'
         onClick={() => {
           handleLinkClick(0);
         }}
@@ -30,9 +30,9 @@ function Overlay({ destination, setNavigate }) {
         <a href='#home'>
           <Image src='/images/logo2.png' alt='logo' width={1724} height={648} />
         </a>
-      </div>
-      <aside className=' text-primary z-20 fixed right-12 top-0 my-12'>
-        <nav className='side-bar '>
+      </header>
+      <aside className=' text-primary z-20 fixed right-12 top-0 my-12 md:top-[-10px]'>
+        <nav className='side-bar'>
           <a
             href='#contact'
             className='px-8 py-2 border-2 border-primary rounded-md text-[17px] font-semibold cursor-pointer transition-all duration-300 ease-in-out  hover:bg-primary hover:text-[#000]'
@@ -40,7 +40,7 @@ function Overlay({ destination, setNavigate }) {
           >
             Contact
           </a>
-          <ul className='side-nav relative flex flex-col list-none  text-[13px]'>
+          <ul className='side-nav relative flex flex-col list-none text-[13px] lg:hidden'>
             <li>
               <a
                 href='#home'
@@ -87,13 +87,11 @@ function Overlay({ destination, setNavigate }) {
               </a>
             </li>
             <div
-              className={`line ${
-                hoveredIndex !== null ? `hover-${hoveredIndex}` : ''
-              }`}
+              className='line'
               style={{ transform: `translateY(${linePosition}px)` }}
             />
           </ul>
-          <div className='up'>
+          <div className='arrow-up md:hidden'>
             <a href='#home'>
               <Image
                 src='/images/chevrons-up.svg'
@@ -107,19 +105,20 @@ function Overlay({ destination, setNavigate }) {
         </nav>
       </aside>
       <Link
+        className='z-20 fixed bottom-[40px] left-[50px] md:hidden'
         href='https://github.com/MohamedHesham1'
         target='_blank'
-        className='z-20 fixed bottom-[40px] left-[50px] '
       >
         <Image
-          src='/images/github.svg'
           className='w-auto h-auto'
+          src='/images/github.svg'
           alt='github'
           width={30}
           height={30}
         />
       </Link>
-    </div>
+      <div className='hidden fixed top-0 left-0 z-10 w-full h-[75px] bg-[#141416] md:block'></div>
+    </>
   );
 }
 

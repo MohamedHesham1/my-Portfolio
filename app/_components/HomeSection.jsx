@@ -7,7 +7,7 @@ function Home({ direction }) {
   return (
     <div className='container overflow-x-hidden'>
       <div className='flex h-screen items-center justify-between md:flex-col-reverse sm:items-stretch md:relative'>
-        <div>
+        <div className='decorative-imgs'>
           <Image
             className='absolute top-[-320px] right-[1%] rotate-90 md:top-[-504px]'
             src='/images/side-dots.png'
