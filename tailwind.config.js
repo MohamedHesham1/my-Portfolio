@@ -9,10 +9,9 @@ module.exports = withAnimations({
   ],
   theme: {
     screens: {
-      sm: { max: '480px' },
+      lg: { max: '1000px' },
       md: { max: '767px' },
-      lg: { max: '976px' },
-      xl: '1440px',
+      sm: { max: '480px' },
     },
     colors: {
       primary: '#f0f8ff',

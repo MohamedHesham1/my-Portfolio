@@ -63,7 +63,7 @@ function ContactSection({ direction, destination, slideIndexS }) {
         height={351}
       />
 
-      <div className='rectangle right-[-550px] top-[-400px]'>
+      <div className='rectangle absolute top-[-400px] right-[-550px] blur-[6px] opacity-70 -z-10 lg:hidden'>
         <Image src='/images/rectangle.svg' alt='' width={839} height={829} />
       </div>
       <RectangleRotate />

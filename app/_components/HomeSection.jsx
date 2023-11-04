@@ -6,8 +6,8 @@ import RectangleRotate from './utils/RectangleRotate';
 function Home({ direction }) {
   return (
     <div className='container overflow-x-hidden'>
-      <div className='flex h-screen items-center justify-between md:flex-col-reverse sm:items-stretch md:relative'>
-        <div className='decorative-imgs'>
+      <div className='flex h-screen items-center justify-between md:flex-col-reverse sm:items-stretch lg:relative'>
+        <div className='decorative-images'>
           <Image
             className='absolute top-[-320px] right-[1%] rotate-90 md:top-[-504px]'
             src='/images/side-dots.png'
@@ -51,7 +51,7 @@ function Home({ direction }) {
               : ''
           }  `}
         >
-          <h1 className='heading max-w-full text-primary font-bold whitespace-pre sm:text-[3rem]'>
+          <h1 className='heading max-w-full text-primary font-bold whitespace-pre'>
             {Array.from(info[0].heading[0]).map((item, index) => {
               return <AnimateRubber key={index}>{item}</AnimateRubber>;
             })}

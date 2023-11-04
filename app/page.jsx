@@ -45,7 +45,7 @@ const App = () => {
       <ReactFullpage
         anchors={['home', 'about', 'skills', 'projects', 'contact']}
         menu='#menu'
-        responsiveWidth={800}
+        responsiveWidth={1000}
         css3={true}
         scrollingSpeed={1200}
         slidesNavigation={true}
@@ -67,21 +67,21 @@ const App = () => {
                 <Skills direction={direction} destination={destination} />
               </section>
               <section className='section fp-auto-height-responsive'>
-                <div className='slide'>
+                <div className='slide fp-auto-height-responsive'>
                   <ProjectSlideIntro
                     direction={direction}
                     destination={destination}
                     slideIndexS={slideIndexS}
                   />
                 </div>
-                <div className='slide'>
+                <div className='slide fp-auto-height-responsive'>
                   <ProjectSlide1
                     direction={direction}
                     destination={destination}
                     slideIndexS={slideIndexS}
                   />
                 </div>
-                <div className='slide'>
+                <div className='slide fp-auto-height-responsive'>
                   <ProjectSlide2
                     direction={direction}
                     destination={destination}

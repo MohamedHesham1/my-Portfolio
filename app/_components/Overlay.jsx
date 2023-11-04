@@ -22,7 +22,7 @@ function Overlay({ destination, setNavigate }) {
   return (
     <>
       <header
-        className='z-20 fixed top-[40px] left-[50px] max-w-[160px] md:top-[20px] md:left-[30px]'
+        className='z-20 fixed top-[40px] left-[50px] max-w-[160px] md:top-[20px] md:left-[30px] sm:max-w-[130px]'
         onClick={() => {
           handleLinkClick(0);
         }}
@@ -31,11 +31,11 @@ function Overlay({ destination, setNavigate }) {
           <Image src='/images/logo2.png' alt='logo' width={1724} height={648} />
         </a>
       </header>
-      <aside className=' text-primary z-20 fixed right-12 top-0 my-12 md:top-[-10px]'>
+      <aside className=' text-primary z-20 fixed right-12 top-0 my-12 md:top-[-14px] sm:top-[-20px] sm:right-6'>
         <nav className='side-bar'>
           <a
             href='#contact'
-            className='px-8 py-2 border-2 border-primary rounded-md text-[17px] font-semibold cursor-pointer transition-all duration-300 ease-in-out  hover:bg-primary hover:text-[#000]'
+            className='px-8 py-2 border-2 border-primary rounded-md text-[17px] font-semibold cursor-pointer transition-all duration-300 ease-in-out  hover:bg-primary hover:text-[#000] sm:px-6'
             onClick={() => handleLinkClick(200)}
           >
             Contact

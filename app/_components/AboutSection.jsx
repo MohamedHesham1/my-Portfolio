@@ -81,7 +81,7 @@ function About({ direction, destination }) {
         </div>
       </div>
       <Image
-        className={`absolute opacity-70 max-w-[200px] bottom-[20px] left-[730px] md:hidden ${
+        className={`absolute opacity-70 max-w-[200px] bottom-[20px] left-[730px] lg:hidden ${
           direction === 'down' && destination.index === 1
             ? 'animate-slideInUp animate-duration-[0.8s] animate-delay-[0.4s]'
             : direction === 'down' && destination.index === 2
