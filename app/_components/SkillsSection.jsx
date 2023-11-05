@@ -7,9 +7,9 @@ import RectangleRotate from './utils/RectangleRotate';
 function Skills({ direction, destination }) {
   return (
     <div className='container overflow-hidden'>
-      <div className='skills-section'>
+      <div className='skills-section md:px-8 sm:px-4'>
         <div
-          className={`text-wrapper text-center text-[18px] leading-6 ${
+          className={`text-wrapper text-center text-[18px] leading-6 md:text-left ${
             direction === 'down' && destination.index === 2
               ? 'animate-fadeInUp animate-duration-[1s] animate-delay-[0.2s]'
               : direction === 'down' && destination.index === 3
@@ -52,7 +52,7 @@ function Skills({ direction, destination }) {
             for more details.
           </p>
         </div>
-        <ul className='logo-wrapper flex flex-wrap justify-center max-w-[1000px] mx-auto mt-16 '>
+        <ul className='logo-wrapper flex flex-wrap justify-center text-center max-w-[1000px] mx-auto mt-16 md:text-start md:justify-start'>
           <li
             className={` ${
               direction === 'down' && destination.index === 2
@@ -109,12 +109,12 @@ function Skills({ direction, destination }) {
             }  `}
           >
             <Image
-              src='/images/brands/next.svg'
-              alt='Next.js'
+              src='/images/brands/vue.svg'
+              alt='vue'
               width={128}
               height={128}
             />
-            <p>Next.js</p>
+            <p>Vue</p>
           </li>
           <li
             className={` ${
@@ -130,12 +130,12 @@ function Skills({ direction, destination }) {
             }  `}
           >
             <Image
-              src='/images/brands/redux.svg'
-              alt='Redux'
+              src='/images/brands/next.svg'
+              alt='next.js'
               width={128}
               height={128}
             />
-            <p>Redux</p>
+            <p>Next</p>
           </li>
           <li
             className={` ${
@@ -172,12 +172,12 @@ function Skills({ direction, destination }) {
             }  `}
           >
             <Image
-              src='/images/brands/tailwind.svg'
-              alt='Tailwind'
+              src='/images/brands/redux.svg'
+              alt='redux'
               width={128}
               height={128}
             />
-            <p>Tailwind</p>
+            <p>Redux</p>
           </li>
           <li
             className={` ${
@@ -193,12 +193,12 @@ function Skills({ direction, destination }) {
             }  `}
           >
             <Image
-              src='/images/brands/sass.svg'
-              alt='SASS'
+              src='/images/brands/ant-design.svg'
+              alt='ant design'
               width={128}
               height={128}
             />
-            <p>SASS</p>
+            <p>Ant-Design</p>
           </li>
           <li
             className={` ${
@@ -256,12 +256,12 @@ function Skills({ direction, destination }) {
             }  `}
           >
             <Image
-              src='/images/brands/ant-design.svg'
-              alt='Ant Design'
+              src='/images/brands/tailwind.svg'
+              alt='tailwind'
               width={128}
               height={128}
             />
-            <p>Ant-Design</p>
+            <p>Tailwind</p>
           </li>
           <li
             className={` ${
@@ -319,12 +319,12 @@ function Skills({ direction, destination }) {
             }  `}
           >
             <Image
-              src='/images/brands/bootstrap.svg'
-              alt='Bootstrap'
+              src='/images/brands/sass.svg'
+              alt='sass'
               width={128}
               height={128}
             />
-            <p>Bootstrap</p>
+            <p>Sass</p>
           </li>
           <li
             className={` ${
