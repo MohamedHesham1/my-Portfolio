@@ -30,7 +30,7 @@ function About({ direction, destination }) {
               })}
               <Image
                 src='/images/darth-vader.svg'
-                className='w-10  right-[-46px] absolute top-[26px]'
+                className='w-10 right-[-46px] absolute top-[26px] lg:top-[10px]'
                 alt=''
                 width={64}
                 height={64}
@@ -38,7 +38,7 @@ function About({ direction, destination }) {
             </span>
           </h2>
           <div className='text-justify max-w-[530px] text-lg'>
-            <p className='py-8 pe-28'>
+            <p className='py-8 pe-28 sm:pe-8'>
               🚀I engineer solutions for design challenges, create intuitive
               interfaces, and craft dynamic web apps. Transforming concepts into
               captivating online experiences. Join me as I navigate the digital
@@ -63,21 +63,15 @@ function About({ direction, destination }) {
             direction === 'down' && destination.index === 1
               ? 'animate-slideInUp animate-duration-[1s] animate-delay-[0.5s]'
               : direction === 'down' && destination.index === 2
-              ? 'animate-fadeOutUpBig animate-duration-[3s] '
+              ? 'animate-fadeOutUpBig animate-duration-[3s]'
               : direction === 'up' && destination.index === 0
-              ? 'animate-fadeOutDownBig animate-duration-[3s]  '
+              ? 'animate-fadeOutDownBig animate-duration-[3s]'
               : direction === 'up' && destination.index === 1
               ? 'animate-slideInDown animate-duration-1000  animate-delay-[0.5s]'
               : ''
           }  `}
         >
-          <Image
-            src='/images/pc.svg'
-            priority
-            alt=''
-            width={3879}
-            height={4661}
-          />
+          <Image src='/images/pc.svg' alt='' width={3879} height={4661} />
         </div>
       </div>
       <Image

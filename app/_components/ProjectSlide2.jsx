@@ -4,10 +4,10 @@ import AnimateRubber from './utils/AnimateRubber';
 
 function ProjectSlide2({ direction, destination, slideIndexS }) {
   return (
-    <div className=' w-screen overflow-hidden'>
-      <div className='container flex h-screen items-center justify-between relative'>
+    <div className='overflow-hidden'>
+      <div className='container flex h-screen items-center justify-between relative lg:flex-col lg:justify-center sm:gap-6'>
         <Image
-          className={`absolute z-[-1] top-[-398px] left-[18%] `}
+          className={`absolute z-[-1] top-[-398px] left-[18%] xl:hidden`}
           src='/images/side-dots.png'
           alt=''
           width={255}
@@ -32,7 +32,7 @@ function ProjectSlide2({ direction, destination, slideIndexS }) {
             } `}
           >
             <Image
-              className={`max-w-[700px] max-h-[420px]`}
+              className={` max-w-[700px] max-h-[420px] xl:w-full`}
               src='/images/iphone14.png'
               alt='e-commerce application'
               priority
@@ -42,7 +42,7 @@ function ProjectSlide2({ direction, destination, slideIndexS }) {
           </div>
         </div>
         <div
-          className={`text-wrapper max-w-[550px] text-[18px] pl-12 mr-[11%] ${
+          className={`text-wrapper max-w-[550px] text-[18px] pl-12 mr-[11%]  ${
             direction && destination.index === 4
               ? 'animate-fadeOutUpBig animate-duration-[3s]'
               : direction && destination.index === 3
@@ -65,7 +65,7 @@ function ProjectSlide2({ direction, destination, slideIndexS }) {
                 return <AnimateRubber key={index}>{item}</AnimateRubber>;
               })}
             </h2>
-            <div className='py-6'>
+            <div className='py-6 sm:py-0'>
               <p className='my-[18px]'>
                 Online platform tailored for teachers and students
               </p>

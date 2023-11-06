@@ -4,10 +4,10 @@ import AnimateRubber from './utils/AnimateRubber';
 
 function ProjectSlide1({ direction, destination, slideIndexS }) {
   return (
-    <div className=' w-screen overflow-hidden'>
-      <div className='container flex h-screen items-center justify-between'>
+    <div className='overflow-hidden'>
+      <div className='container flex h-screen items-center justify-between md:flex-col md:justify-center'>
         <div
-          className={`text-wrapper flex-auto max-w-[550px] text-[18px] ${
+          className={`text-wrapper max-w-[550px] text-[18px] md:order-1 ${
             direction && window.location.hash === '#projects/2'
               ? 'animate-fadeOutLeftBig animate-duration-[1.8s]'
               : direction && slideIndexS === 3
@@ -25,7 +25,7 @@ function ProjectSlide1({ direction, destination, slideIndexS }) {
               return <AnimateRubber key={index}>{item}</AnimateRubber>;
             })}
           </h2>
-          <div className='py-6'>
+          <div className='py-6 md:p-0'>
             <p className='my-[18px]'>
               Online store for selling electronic products
             </p>
@@ -69,9 +69,9 @@ function ProjectSlide1({ direction, destination, slideIndexS }) {
             </div>
           </div>
         </div>
-        <div className='image-wrapper mr-[70px] w-full relative'>
+        <div className='image-wrapper mr-[70px] w-full relative md:m-0'>
           <Image
-            className={`absolute max-w-[200px] z-10 top-[-60px] left-[36%]  ${
+            className={`absolute max-w-[200px] z-10 top-[-60px] left-[36%] md:hidden ${
               direction && window.location.hash === '#projects/2'
                 ? 'animate-fadeOutLeftBig animate-duration-[1.4s] animate-delay-[0.3s]'
                 : direction && slideIndexS === 3
@@ -82,10 +82,11 @@ function ProjectSlide1({ direction, destination, slideIndexS }) {
             alt=''
             width={494}
             height={441}
+            unoptimized
           />
           <div className='project-image'>
             <Image
-              className={`max-w-[700px] w-full my-[20px] mx-auto ${
+              className={`max-w-[700px] w-full my-[20px] mx-auto md:max-w-[500px] ${
                 direction && window.location.hash === '#projects'
                   ? 'animate-fadeOutRightBig animate-duration-[2s]'
                   : direction && slideIndexS === 1
@@ -100,14 +101,15 @@ function ProjectSlide1({ direction, destination, slideIndexS }) {
             />
           </div>
           <Image
-            className={`absolute max-w-[150px] z-10 bottom-[50px] right-[14%] `}
+            className='absolute max-w-[150px] z-10 bottom-[50px] right-[14%] md:hidden'
             src='/images/dark_cube1.png'
             alt=''
             width={424}
             height={351}
+            unoptimized
           />
           <Image
-            className={`absolute max-w-[150px] z-[-1] bottom-[-100px] left-[150px] opacity-70 ${
+            className={`absolute max-w-[150px] z-[-1] bottom-[-100px] left-[150px] opacity-70 md:hidden ${
               direction && window.location.hash === '#projects/2'
                 ? 'animate-fadeOutLeftBig animate-duration-[1.4s] animate-delay-[0.3s]'
                 : direction && slideIndexS === 3
@@ -118,6 +120,7 @@ function ProjectSlide1({ direction, destination, slideIndexS }) {
             alt=''
             width={356}
             height={289}
+            unoptimized
           />
         </div>
       </div>

@@ -3,12 +3,12 @@ import Link from 'next/link';
 import Globe from './utils/GlobeWrapper';
 import RectangleRotate from './utils/RectangleRotate';
 
-function ContactSection({ direction, destination, slideIndexS }) {
+function ContactSection({ direction }) {
   return (
-    <div className=' w-screen overflow-hidden'>
-      <div className='container flex h-screen items-center relative'>
+    <div className='overflow-hidden'>
+      <div className='container flex items-center relative flex-wrap xl:justify-center '>
         <div
-          className={`image-wrapper caret-[transparent] ${
+          className={`globe-wrapper caret-[transparent] ${
             direction === 'down'
               ? 'animate-fadeIn animate-duration-[3s] animate-delay-[0.6s]'
               : direction === 'up'
@@ -19,7 +19,7 @@ function ContactSection({ direction, destination, slideIndexS }) {
           <Globe />
         </div>
         <div
-          className={`text-wrapper max-w-[350px] text-[18px] ${
+          className={`text-wrapper max-w-[350px] text-[18px] xl:pr-8 ${
             direction === 'down'
               ? 'animate-slideInUp animate-duration-[1s] animate-delay-[0.2s]'
               : ''
@@ -50,7 +50,7 @@ function ContactSection({ direction, destination, slideIndexS }) {
       </div>
 
       <Image
-        className={`absolute opacity-70 max-w-[150px] bottom-[180px] right-[250px] ${
+        className={`absolute opacity-70 max-w-[150px] bottom-[180px] right-[250px] xl:hidden ${
           direction === 'down'
             ? 'animate-slideInUp animate-duration-[1s] animate-delay-[0.2s]'
             : direction === 'up'
@@ -66,7 +66,9 @@ function ContactSection({ direction, destination, slideIndexS }) {
       <div className='rectangle absolute top-[-400px] right-[-550px] blur-[6px] opacity-70 -z-10 lg:hidden'>
         <Image src='/images/rectangle.svg' alt='' width={839} height={829} />
       </div>
-      <RectangleRotate />
+      <div className='md:hidden'>
+        <RectangleRotate />
+      </div>
     </div>
   );
 }
