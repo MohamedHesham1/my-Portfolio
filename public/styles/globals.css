@@ -139,7 +139,9 @@ html {
   .heading {
     font-size: 39px;
   }
-
+  .section {
+    margin-bottom: 12rem;
+  }
   .animate-fadeIn,
   .animate-fadeInDownBig,
   .animate-fadeInUp,
@@ -163,9 +165,7 @@ html {
   .heading {
     font-size: 36px;
   }
-  .section {
-    margin-bottom: 12rem;
-  }
+
   .fp-overflow {
     max-height: none !important;
   }

@@ -2,11 +2,11 @@ import info from '@/public/data/info.json';
 import Image from 'next/image';
 import AnimateRubber from './utils/AnimateRubber';
 
-function ProjectSlideIntro({ direction, destination, slideIndexS }) {
+function ProjectSlide0({ direction, destination, slideIndexS }) {
   return (
     <div className='container flex h-screen items-center '>
       <div
-        className={`mx-auto text-center
+        className={`mx-auto text-center md:text-left
       ${
         direction && destination.index === 3
           ? 'animate-slideInUp animate-duration-[1s] animate-delay-[0.2s]'
@@ -65,7 +65,7 @@ function ProjectSlideIntro({ direction, destination, slideIndexS }) {
       </div>
 
       <Image
-        className={`absolute top-[230px] left-[10%] ${
+        className={`absolute top-[230px] left-[10%] -z-10 ${
           direction && destination.index === 3
             ? 'animate-slideInUp animate-duration-[0.7s] animate-delay-[0.3s]'
             : direction === 'up' && destination.index === 2
@@ -108,4 +108,4 @@ function ProjectSlideIntro({ direction, destination, slideIndexS }) {
   );
 }
 
-export default ProjectSlideIntro;
+export default ProjectSlide0;

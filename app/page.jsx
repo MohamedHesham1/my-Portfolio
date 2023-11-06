@@ -7,7 +7,7 @@ import Home from './_components/HomeSection';
 import Overlay from './_components/Overlay';
 import ProjectSlide1 from './_components/ProjectSlide1';
 import ProjectSlide2 from './_components/ProjectSlide2';
-import ProjectSlideIntro from './_components/ProjectSlideIntro';
+import ProjectSlide0 from './_components/ProjectSlide0';
 import Skills from './_components/SkillsSection';
 
 const App = () => {
@@ -68,7 +68,7 @@ const App = () => {
               </section>
               <section className='section fp-auto-height-responsive'>
                 <div className='slide fp-auto-height-responsive'>
-                  <ProjectSlideIntro
+                  <ProjectSlide0
                     direction={direction}
                     destination={destination}
                     slideIndexS={slideIndexS}
@@ -90,10 +90,7 @@ const App = () => {
                 </div>
               </section>
               <section className='section fp-auto-height-responsive'>
-                <ContactSection
-                  direction={direction}
-                  destination={destination}
-                />
+                <ContactSection direction={direction} />
               </section>
             </ReactFullpage.Wrapper>
           );
