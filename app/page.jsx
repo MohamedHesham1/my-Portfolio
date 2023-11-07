@@ -52,6 +52,7 @@ const App = () => {
         licenseKey={'OPEN-SOURCE-GPLV3-LICENSE'}
         afterSlideLoad={handleSlideLoad}
         onLeave={handleLeave}
+        onSlideLeave={() => {}}
         render={({ fullpageApi }) => {
           fullpageApiRef.current = fullpageApi;
 
