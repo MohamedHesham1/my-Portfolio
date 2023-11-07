@@ -77,7 +77,7 @@ function ProjectSlide2({ direction, destination, slideIndexS }) {
             <div>
               <div className='text-primary text-[18px] font-semibold mb-[10px]'>
                 <a
-                  href='https://github.com/MohamedHesham1/Emart'
+                  href='https://github.com/MohamedHesham1/e-learning-landing'
                   target='_blank'
                   className='inline-flex justify-center items-center group'
                 >
@@ -93,7 +93,7 @@ function ProjectSlide2({ direction, destination, slideIndexS }) {
               </div>
               <div className='text-secondary text-[18px] font-semibold'>
                 <a
-                  href='https://emart-gkyr.onrender.com/'
+                  href='https://hassan-maher-platform.vercel.app/'
                   target='_blank'
                   className='inline-flex justify-center items-center group '
                 >
