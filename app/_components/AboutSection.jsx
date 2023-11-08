@@ -39,7 +39,7 @@ function About({ direction, destination }) {
           </h2>
           <div className='text-justify max-w-[530px] text-lg'>
             <p className='py-8 pe-28 sm:pe-8'>
-              🚀I engineer solutions for design challenges, create intuitive
+              🚀I develop solutions for design challenges, create intuitive
               interfaces, and craft dynamic web apps. Transforming concepts into
               captivating online experiences. Join me as I navigate the digital
               realm, crafting immersive web landscapes.

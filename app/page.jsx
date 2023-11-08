@@ -1,6 +1,6 @@
 'use client';
 import ReactFullpage from '@fullpage/react-fullpage';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import About from './_components/AboutSection';
 import ContactSection from './_components/ContactSection';
 import Home from './_components/HomeSection';
@@ -9,14 +9,20 @@ import ProjectSlide1 from './_components/ProjectSlide1';
 import ProjectSlide2 from './_components/ProjectSlide2';
 import ProjectSlide0 from './_components/ProjectSlide0';
 import Skills from './_components/SkillsSection';
+import LoadingScreen from './_components/utils/LoadingScreen';
 
 const App = () => {
+  const [isLoading, setIsLoading] = useState(true);
   const [slideIndexS, setSlideIndexS] = useState(0);
   const [sliding, setSliding] = useState(false);
   const [direction, setDirection] = useState(null);
   const [destination, setDestination] = useState(null);
   const [navigate, setNavigate] = useState(false);
   const fullpageApiRef = useRef(null);
+
+  useEffect(() => {
+    setIsLoading(false);
+  }, []);
 
   const handleSlideLoad = (section, origin, destination, direction) => {
     setSlideIndexS(destination.index + 1);
@@ -40,6 +46,10 @@ const App = () => {
   };
 
   return (
+    <>
+      {isLoading ? (
+        <LoadingScreen />
+      ) : (
     <>
       <Overlay destination={destination} setNavigate={setNavigate} />
       <ReactFullpage
@@ -97,6 +107,8 @@ const App = () => {
           );
         }}
       />
+        </>
+      )}
     </>
   );
 };
