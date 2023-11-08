@@ -1,6 +1,7 @@
 import info from '@/public/data/info.json';
 import Image from 'next/image';
 import AnimateRubber from './utils/AnimateRubber';
+import iphone from '@/public/images/iphone14.png';
 
 function ProjectSlide2({ direction, destination, slideIndexS }) {
   return (
@@ -33,11 +34,8 @@ function ProjectSlide2({ direction, destination, slideIndexS }) {
           >
             <Image
               className={` max-w-[700px] max-h-[420px] xl:w-full`}
-              src='/images/iphone14.png'
-              alt='e-commerce application'
-              priority
-              width={3069}
-              height={2699}
+              src={iphone}
+              alt='e-learning application'
             />
           </div>
         </div>

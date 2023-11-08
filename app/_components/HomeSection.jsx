@@ -2,6 +2,7 @@ import info from '@/public/data/info.json';
 import Image from 'next/image';
 import AnimateRubber from './utils/AnimateRubber';
 import RectangleRotate from './utils/RectangleRotate';
+import myPhoto from '@/public/images/my-photo.png';
 
 function Home({ direction }) {
   return (
@@ -27,9 +28,10 @@ function Home({ direction }) {
             alt=''
             width={494}
             height={441}
+            quality={80}
           />
           <Image
-            className={`absolute opacity-70 max-w-[200px] bottom-[40px] left-[17%] md:hidden ${
+            className={`absolute opacity-70 w-full max-w-[200px] bottom-[40px] left-[17%] md:hidden  ${
               direction === 'down'
                 ? 'animate-fadeOutUpBig animate-duration-[3s] animate-delay-[0.4s]'
                 : direction === 'up'
@@ -40,6 +42,7 @@ function Home({ direction }) {
             alt=''
             width={424}
             height={351}
+            quality={80}
           />
         </div>
         <div
@@ -91,11 +94,9 @@ function Home({ direction }) {
           <Image
             className='max-w-[600px] w-full drop-shadow-[-12px_5px_50px_rgba(28,95,154,0.4)]
             md:max-w-[400px]'
-            src='/images/my-photo.png'
-            priority
+            src={myPhoto}
             alt="Mohamed's photo"
-            width={2000}
-            height={2000}
+            priority
           />
         </div>
       </div>

@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import logo from '@/public/images/logo.png';
 
 function Overlay({ destination, setNavigate }) {
   // sets the line position in the side-bar
@@ -28,7 +29,7 @@ function Overlay({ destination, setNavigate }) {
         }}
       >
         <a href='#home'>
-          <Image src='/images/logo2.png' alt='logo' width={1724} height={648} />
+          <Image src={logo} alt='logo' />
         </a>
       </header>
       <aside className=' text-primary z-20 fixed right-12 top-0 my-12 lg:top-[-18px] sm:top-[-20px] sm:right-6'>
@@ -86,7 +87,7 @@ function Overlay({ destination, setNavigate }) {
                 04
               </a>
             </li>
-            <div
+            <li
               className='line'
               style={{ transform: `translateY(${linePosition}px)` }}
             />

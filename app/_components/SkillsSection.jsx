@@ -68,7 +68,7 @@ function Skills({ direction, destination }) {
           >
             <Image
               src='/images/brands/js.svg'
-              alt='JavaScript'
+              alt=''
               width={128}
               height={128}
             />
@@ -89,7 +89,7 @@ function Skills({ direction, destination }) {
           >
             <Image
               src='/images/brands/react.svg'
-              alt='React'
+              alt=''
               width={128}
               height={128}
             />
@@ -110,7 +110,7 @@ function Skills({ direction, destination }) {
           >
             <Image
               src='/images/brands/vue.svg'
-              alt='vue'
+              alt=''
               width={128}
               height={128}
             />
@@ -131,7 +131,7 @@ function Skills({ direction, destination }) {
           >
             <Image
               src='/images/brands/next.svg'
-              alt='next.js'
+              alt=''
               width={128}
               height={128}
             />
@@ -152,7 +152,7 @@ function Skills({ direction, destination }) {
           >
             <Image
               src='/images/brands/node.svg'
-              alt='Node'
+              alt=''
               width={128}
               height={128}
             />
@@ -173,7 +173,7 @@ function Skills({ direction, destination }) {
           >
             <Image
               src='/images/brands/redux.svg'
-              alt='redux'
+              alt=''
               width={128}
               height={128}
             />
@@ -194,7 +194,7 @@ function Skills({ direction, destination }) {
           >
             <Image
               src='/images/brands/ant-design.svg'
-              alt='ant design'
+              alt=''
               width={128}
               height={128}
             />
@@ -215,7 +215,7 @@ function Skills({ direction, destination }) {
           >
             <Image
               src='/images/brands/css.svg'
-              alt='CSS3'
+              alt=''
               width={128}
               height={128}
             />
@@ -236,7 +236,7 @@ function Skills({ direction, destination }) {
           >
             <Image
               src='/images/brands/html.svg'
-              alt='HTML5'
+              alt=''
               width={128}
               height={128}
             />
@@ -257,7 +257,7 @@ function Skills({ direction, destination }) {
           >
             <Image
               src='/images/brands/tailwind.svg'
-              alt='tailwind'
+              alt=''
               width={128}
               height={128}
             />
@@ -278,7 +278,7 @@ function Skills({ direction, destination }) {
           >
             <Image
               src='/images/brands/chakraui.svg'
-              alt='Chakra UI'
+              alt=''
               width={128}
               height={128}
             />
@@ -299,7 +299,7 @@ function Skills({ direction, destination }) {
           >
             <Image
               src='/images/brands/git.svg'
-              alt='Git'
+              alt=''
               width={128}
               height={128}
             />
@@ -320,7 +320,7 @@ function Skills({ direction, destination }) {
           >
             <Image
               src='/images/brands/sass.svg'
-              alt='sass'
+              alt=''
               width={128}
               height={128}
             />
@@ -341,7 +341,7 @@ function Skills({ direction, destination }) {
           >
             <Image
               src='/images/brands/figma.svg'
-              alt='Figma'
+              alt=''
               width={128}
               height={128}
             />

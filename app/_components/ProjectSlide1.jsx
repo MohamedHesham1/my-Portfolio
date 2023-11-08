@@ -1,6 +1,7 @@
 import info from '@/public/data/info.json';
 import Image from 'next/image';
 import AnimateRubber from './utils/AnimateRubber';
+import macBook from '@/public/images/macbook.png';
 
 function ProjectSlide1({ direction, destination, slideIndexS }) {
   return (
@@ -82,7 +83,6 @@ function ProjectSlide1({ direction, destination, slideIndexS }) {
             alt=''
             width={494}
             height={441}
-            unoptimized
           />
           <div className='project-image'>
             <Image
@@ -93,11 +93,8 @@ function ProjectSlide1({ direction, destination, slideIndexS }) {
                   ? 'animate-slideInRight animate-duration-[1s] animate-delay-[0.2s]'
                   : ''
               } `}
-              src='/images/macbook.png'
+              src={macBook}
               alt='e-commerce application'
-              priority
-              width={2100}
-              height={1400}
             />
           </div>
           <Image
@@ -106,7 +103,6 @@ function ProjectSlide1({ direction, destination, slideIndexS }) {
             alt=''
             width={424}
             height={351}
-            unoptimized
           />
           <Image
             className={`absolute max-w-[150px] z-[-1] bottom-[-100px] left-[150px] opacity-70 md:hidden ${
@@ -120,7 +116,6 @@ function ProjectSlide1({ direction, destination, slideIndexS }) {
             alt=''
             width={356}
             height={289}
-            unoptimized
           />
         </div>
       </div>
