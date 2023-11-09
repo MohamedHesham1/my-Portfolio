@@ -50,63 +50,64 @@ const App = () => {
       {isLoading ? (
         <LoadingScreen />
       ) : (
-    <>
-      <Overlay destination={destination} setNavigate={setNavigate} />
-      <ReactFullpage
-        anchors={['home', 'about', 'skills', 'projects', 'contact']}
-        menu='#menu'
-        responsiveWidth={1000}
-        css3={true}
-        scrollingSpeed={1200}
-        slidesNavigation={true}
-        licenseKey={'OPEN-SOURCE-GPLV3-LICENSE'}
-        afterSlideLoad={handleSlideLoad}
-        onLeave={handleLeave}
-        onSlideLeave={() => {}}
-        render={({ fullpageApi }) => {
-          fullpageApiRef.current = fullpageApi;
+        <>
+          <Overlay destination={destination} setNavigate={setNavigate} />
+          <ReactFullpage
+            anchors={['home', 'about', 'skills', 'projects', 'contact']}
+            menu='#menu'
+            responsiveWidth={1000}
+            css3={true}
+            scrollingSpeed={1200}
+            slidesNavigation={true}
+            licenseKey={'OPEN-SOURCE-GPLV3-LICENSE'}
+            afterSlideLoad={handleSlideLoad}
+            onLeave={handleLeave}
+            onSlideLeave={() => {}}
+            render={({ fullpageApi }) => {
+              fullpageApiRef.current = fullpageApi;
 
-          return (
-            <ReactFullpage.Wrapper>
-              <section className='section fp-auto-height-responsive'>
-                <Home direction={direction} />
-              </section>
-              <section className='section fp-auto-height-responsive'>
-                <About direction={direction} destination={destination} />
-              </section>
-              <section className='section fp-auto-height-responsive'>
-                <Skills direction={direction} destination={destination} />
-              </section>
-              <section className='section fp-auto-height-responsive'>
-                <div className='slide fp-auto-height-responsive'>
-                  <ProjectSlide0
-                    direction={direction}
-                    destination={destination}
-                    slideIndexS={slideIndexS}
-                  />
-                </div>
-                <div className='slide fp-auto-height-responsive'>
-                  <ProjectSlide1
-                    direction={direction}
-                    destination={destination}
-                    slideIndexS={slideIndexS}
-                  />
-                </div>
-                <div className='slide fp-auto-height-responsive'>
-                  <ProjectSlide2
-                    direction={direction}
-                    destination={destination}
-                    slideIndexS={slideIndexS}
-                  />
-                </div>
-              </section>
-              <section className='section fp-auto-height-responsive'>
-                <ContactSection direction={direction} />
-              </section>
-            </ReactFullpage.Wrapper>
-          );
-        }}
-      />
+              return (
+                <ReactFullpage.Wrapper>
+                  <section className='section fp-auto-height-responsive'>
+                    <Home direction={direction} />
+                  </section>
+                  <section className='section fp-auto-height-responsive'>
+                    <About direction={direction} destination={destination} />
+                  </section>
+                  <section className='section fp-auto-height-responsive'>
+                    <Skills direction={direction} destination={destination} />
+                  </section>
+                  <section className='section fp-auto-height-responsive'>
+                    <div className='slide fp-auto-height-responsive'>
+                      <ProjectSlide0
+                        direction={direction}
+                        destination={destination}
+                        slideIndexS={slideIndexS}
+                        setNavigate={setNavigate}
+                      />
+                    </div>
+                    <div className='slide fp-auto-height-responsive'>
+                      <ProjectSlide1
+                        direction={direction}
+                        destination={destination}
+                        slideIndexS={slideIndexS}
+                      />
+                    </div>
+                    <div className='slide fp-auto-height-responsive'>
+                      <ProjectSlide2
+                        direction={direction}
+                        destination={destination}
+                        slideIndexS={slideIndexS}
+                      />
+                    </div>
+                  </section>
+                  <section className='section fp-auto-height-responsive'>
+                    <ContactSection direction={direction} />
+                  </section>
+                </ReactFullpage.Wrapper>
+              );
+            }}
+          />
         </>
       )}
     </>

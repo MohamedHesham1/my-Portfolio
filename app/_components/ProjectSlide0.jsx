@@ -2,7 +2,7 @@ import info from '@/public/data/info.json';
 import Image from 'next/image';
 import AnimateRubber from './utils/AnimateRubber';
 
-function ProjectSlide0({ direction, destination, slideIndexS }) {
+function ProjectSlide0({ direction, destination, slideIndexS, setNavigate }) {
   return (
     <div className='container flex h-screen items-center '>
       <div
@@ -42,6 +42,7 @@ function ProjectSlide0({ direction, destination, slideIndexS }) {
             <a
               href='#contact'
               className='hover:opacity-90 text-secondary font-semibold'
+              onClick={() => setNavigate(true)}
             >
               contact me!
             </a>
