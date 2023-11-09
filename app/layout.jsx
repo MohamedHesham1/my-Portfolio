@@ -9,6 +9,9 @@ const sourceSans3 = Source_Sans_3({
 export const metadata = {
   title: "Mohamed's Portfolio",
   description: 'Welcome to My Portfolio',
+  icons: {
+    icon: '/images/icon.png',
+  },
 };
 
 export default function RootLayout({ children }) {
