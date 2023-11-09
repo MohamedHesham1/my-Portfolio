@@ -12,7 +12,7 @@ const SpinningGlobe = () => {
       globeEl.current.controls().autoRotateSpeed = 1.4;
       globeEl.current.controls().enableZoom = false;
     }
-    if (window.innerWidth < 700) {
+    if (window.innerWidth < 500) {
       setGlobeWidth(400);
       setGlobeHeight(400);
     }

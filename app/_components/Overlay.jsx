@@ -111,11 +111,11 @@ function Overlay({ destination, setNavigate }) {
         target='_blank'
       >
         <Image
-          className='w-auto h-auto'
+          className='max-w-[30px] h-[38px]'
           src='/images/github.svg'
           alt='github'
           width={30}
-          height={30}
+          height={38}
         />
       </Link>
       <div className='hidden fixed top-0 left-0 z-10 w-full h-[75px] bg-[#141416] lg:block' />
