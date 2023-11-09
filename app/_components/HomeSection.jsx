@@ -1,8 +1,8 @@
 import info from '@/public/data/info.json';
+import myPhoto from '@/public/images/my-photo.png';
 import Image from 'next/image';
 import AnimateRubber from './utils/AnimateRubber';
 import RectangleRotate from './utils/RectangleRotate';
-import myPhoto from '@/public/images/my-photo.png';
 
 function Home({ direction }) {
   return (

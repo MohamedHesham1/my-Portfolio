@@ -1,11 +1,10 @@
 'use client';
+import logo from '@/public/images/logo.png';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import logo from '@/public/images/logo.png';
 
 function Overlay({ destination, setNavigate }) {
-  // sets the line position in the side-bar
   const [linePosition, setLinePosition] = useState(0);
 
   const handleLinkClick = (targetPosition) => {
@@ -24,19 +23,17 @@ function Overlay({ destination, setNavigate }) {
     <>
       <header
         className='z-20 fixed top-[40px] left-[50px] max-w-[160px] lg:top-[20px] lg:left-[30px] sm:max-w-[130px]'
-        onClick={() => {
-          handleLinkClick(0);
-        }}
+        onClick={() => handleLinkClick(0)}
       >
         <a href='#home'>
           <Image src={logo} alt='logo' />
         </a>
       </header>
-      <aside className=' text-primary z-20 fixed right-12 top-0 my-12 lg:top-[-18px] sm:top-[-20px] sm:right-6'>
+      <aside className='text-primary z-20 fixed right-12 top-0 my-12 lg:top-[-18px] sm:top-[-20px] sm:right-6'>
         <nav className='side-bar'>
           <a
             href='#contact'
-            className='px-8 py-2 border-2 border-primary rounded-md text-[17px] font-semibold cursor-pointer transition-all duration-300 ease-in-out  hover:bg-primary hover:text-[#000] sm:px-6'
+            className='px-8 py-2 border-2 border-primary rounded-md text-[17px] font-semibold cursor-pointer transition-all duration-300 ease-in-out hover:bg-primary hover:text-[#000] sm:px-6'
             onClick={() => handleLinkClick(200)}
           >
             Contact

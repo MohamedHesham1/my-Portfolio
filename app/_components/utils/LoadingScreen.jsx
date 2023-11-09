@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import React from 'react';
 
 const LoadingScreen = () => {
   return (
@@ -10,6 +9,7 @@ const LoadingScreen = () => {
         alt=''
         width={200}
         height={200}
+        priority
       />
       <p className='text-primary text-lg font-bold text-start mr-3 font-mono'>
         L0AD1NG

@@ -1,7 +1,7 @@
 import info from '@/public/data/info.json';
+import iphone from '@/public/images/iphone14.png';
 import Image from 'next/image';
 import AnimateRubber from './utils/AnimateRubber';
-import iphone from '@/public/images/iphone14.png';
 
 function ProjectSlide2({ direction, destination, slideIndexS }) {
   return (

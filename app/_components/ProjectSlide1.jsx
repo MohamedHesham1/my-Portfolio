@@ -1,7 +1,7 @@
 import info from '@/public/data/info.json';
+import macBook from '@/public/images/macbook.png';
 import Image from 'next/image';
 import AnimateRubber from './utils/AnimateRubber';
-import macBook from '@/public/images/macbook.png';
 
 function ProjectSlide1({ direction, destination, slideIndexS }) {
   return (

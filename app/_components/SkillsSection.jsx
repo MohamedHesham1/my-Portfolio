@@ -1,7 +1,7 @@
 import info from '@/public/data/info.json';
-import AnimateRubber from './utils/AnimateRubber';
 import Image from 'next/image';
 import Link from 'next/link';
+import AnimateRubber from './utils/AnimateRubber';
 import RectangleRotate from './utils/RectangleRotate';
 
 function Skills({ direction, destination }) {

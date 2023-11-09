@@ -2,9 +2,9 @@ import info from '@/public/data/info.json';
 import Image from 'next/image';
 import AnimateRubber from './utils/AnimateRubber';
 
-function ProjectSlide0({ direction, destination, slideIndexS, setNavigate }) {
+function ProjectSlide0({ direction, destination, slideIndex, setNavigate }) {
   return (
-    <div className='container flex h-screen items-center '>
+    <div className='container flex h-screen items-center'>
       <div
         className={`mx-auto text-center md:text-left
       ${
@@ -20,7 +20,7 @@ function ProjectSlide0({ direction, destination, slideIndexS, setNavigate }) {
           className={`text-wrapper ${
             direction && window.location.hash === '#projects/1'
               ? 'animate-fadeOutLeftBig animate-duration-[1.8s]'
-              : direction && slideIndexS === 2
+              : direction && slideIndex === 2
               ? 'animate-slideInLeft animate-duration-[0.9s] animate-delay-[0.4s]'
               : ''
           } `}
@@ -95,7 +95,7 @@ function ProjectSlide0({ direction, destination, slideIndexS, setNavigate }) {
         className={`absolute top-[330px] right-[73%] z-[-1] ${
           direction && window.location.hash === '#projects/1'
             ? 'animate-fadeOutLeftBig animate-duration-[1.4s] animate-delay-[0.3s]'
-            : direction && slideIndexS === 2
+            : direction && slideIndex === 2
             ? 'animate-slideInLeft animate-duration-[0.7s] animate-delay-[0.2s]'
             : ''
         }`}
