@@ -10,7 +10,7 @@ export const metadata = {
   title: "Mohamed's Portfolio",
   description: 'Welcome to My Portfolio',
   icons: {
-    icon: '/images/icon.png',
+    icon: '/images/icon.webp',
   },
 };
 

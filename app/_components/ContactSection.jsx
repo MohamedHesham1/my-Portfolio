@@ -57,7 +57,7 @@ function ContactSection({ direction }) {
             ? 'animate-fadeOutDownBig animate-duration-[3s] animate-delay-[0.2s]'
             : ''
         }  `}
-        src='/images/white_cube1.png'
+        src='/images/white_cube1.webp'
         alt=''
         width={424}
         height={351}

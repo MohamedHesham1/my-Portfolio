@@ -86,7 +86,7 @@ function About({ direction, destination }) {
             ? 'animate-slideInDown animate-duration-[ 0.7s] animate-delay-[0.2s]'
             : ''
         }  `}
-        src='/images/purple_romb1.png'
+        src='/images/purple_romb1.webp'
         alt=''
         width={518}
         height={577}

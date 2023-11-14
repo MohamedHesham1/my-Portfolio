@@ -1,5 +1,5 @@
 import info from '@/public/data/info.json';
-import macBook from '@/public/images/macbook.png';
+import macBook from '@/public/images/macbook.webp';
 import Image from 'next/image';
 import AnimateRubber from './utils/AnimateRubber';
 
@@ -79,7 +79,7 @@ function ProjectSlide1({ direction, destination, slideIndexS }) {
                 ? 'animate-slideInLeft animate-duration-[0.7s] animate-delay-[0.3s]'
                 : ''
             }`}
-            src='/images/dark_romb.png'
+            src='/images/dark_romb.webp'
             alt=''
             width={494}
             height={441}
@@ -99,7 +99,7 @@ function ProjectSlide1({ direction, destination, slideIndexS }) {
           </div>
           <Image
             className='absolute max-w-[150px] z-10 bottom-[50px] right-[14%] md:hidden'
-            src='/images/dark_cube1.png'
+            src='/images/dark_cube1.webp'
             alt=''
             width={424}
             height={351}
@@ -112,7 +112,7 @@ function ProjectSlide1({ direction, destination, slideIndexS }) {
                 ? 'animate-slideInLeft animate-duration-[0.7s] animate-delay-[0.3s]'
                 : ''
             }`}
-            src='/images/white_cube2.png'
+            src='/images/white_cube2.webp'
             alt=''
             width={356}
             height={289}

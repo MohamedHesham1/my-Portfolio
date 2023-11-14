@@ -1,5 +1,5 @@
 import info from '@/public/data/info.json';
-import iphone from '@/public/images/iphone14.png';
+import iphone from '@/public/images/iphone14.webp';
 import Image from 'next/image';
 import AnimateRubber from './utils/AnimateRubber';
 

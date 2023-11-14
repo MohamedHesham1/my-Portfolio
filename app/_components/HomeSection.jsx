@@ -1,5 +1,5 @@
 import info from '@/public/data/info.json';
-import myPhoto from '@/public/images/my-photo.png';
+import myPhoto from '@/public/images/my-photo.webp';
 import Image from 'next/image';
 import AnimateRubber from './utils/AnimateRubber';
 import RectangleRotate from './utils/RectangleRotate';
@@ -24,7 +24,7 @@ function Home({ direction }) {
                 ? 'animate-fadeInDownBig animate-delay-[0.3s]'
                 : ''
             }  `}
-            src='/images/blue_romb2.png'
+            src='/images/blue_romb2.webp'
             alt=''
             width={494}
             height={441}
@@ -38,7 +38,7 @@ function Home({ direction }) {
                 ? 'animate-slideInDown animate-duration-[ 0.7s] animate-delay-[0.2s]'
                 : ''
             }  `}
-            src='/images/dark_cube2.png'
+            src='/images/dark_cube2.webp'
             alt=''
             width={424}
             height={351}
