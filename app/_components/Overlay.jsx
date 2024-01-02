@@ -1,13 +1,15 @@
 'use client';
+import logo from '@/public/images/logo.webp';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
-function Overlay({ destination }) {
+function Overlay({ destination, setNavigate }) {
   const [linePosition, setLinePosition] = useState(0);
-  const [hoveredIndex, setHoveredIndex] = useState(null);
+
   const handleLinkClick = (targetPosition) => {
     setLinePosition(targetPosition);
+    setNavigate(true);
   };
 
   useEffect(() => {
@@ -18,25 +20,25 @@ function Overlay({ destination }) {
   }, [destination]);
 
   return (
-    <div>
-      <div
-        className='logo z-20 fixed top-[40px] left-[50px] max-w-[140px] '
+    <>
+      <header
+        className='z-20 fixed top-[40px] left-[50px] max-w-[160px] lg:top-[20px] lg:left-[30px] sm:max-w-[130px]'
         onClick={() => handleLinkClick(0)}
       >
         <a href='#home'>
-          <Image src='/images/logo2.png' alt='logo' width={1724} height={648} />
+          <Image src={logo} alt='logo' />
         </a>
-      </div>
-      <aside className=' text-primary z-20 fixed right-12 top-0 my-12'>
-        <nav className='side-bar '>
+      </header>
+      <aside className='text-primary z-20 fixed right-12 top-0 my-12 lg:top-[-18px] sm:top-[-20px] sm:right-6'>
+        <nav className='side-bar'>
           <a
             href='#contact'
-            className='px-8 py-2 border-2 border-primary rounded-md text-[17px] font-semibold cursor-pointer transition-all duration-300 ease-in-out  hover:bg-primary hover:text-[#000]'
+            className='px-8 py-2 border-2 border-primary rounded-md text-[17px] font-semibold cursor-pointer transition-all duration-300 ease-in-out hover:bg-primary hover:text-[#000] sm:px-6'
             onClick={() => handleLinkClick(200)}
           >
             Contact
           </a>
-          <ul className='side-nav relative flex flex-col list-none  text-[13px]'>
+          <ul className='side-nav relative flex flex-col list-none text-[13px] lg:hidden'>
             <li>
               <a
                 href='#home'
@@ -82,14 +84,12 @@ function Overlay({ destination }) {
                 04
               </a>
             </li>
-            <div
-              className={`line ${
-                hoveredIndex !== null ? `hover-${hoveredIndex}` : ''
-              }`}
+            <li
+              className='line'
               style={{ transform: `translateY(${linePosition}px)` }}
             />
           </ul>
-          <div className='up'>
+          <div className='arrow-up md:hidden'>
             <a href='#home'>
               <Image
                 src='/images/chevrons-up.svg'
@@ -103,19 +103,20 @@ function Overlay({ destination }) {
         </nav>
       </aside>
       <Link
+        className='z-20 fixed bottom-[40px] left-[50px] md:hidden'
         href='https://github.com/MohamedHesham1'
         target='_blank'
-        className='z-20 fixed bottom-[40px] left-[50px] '
       >
         <Image
+          className='max-w-[30px] h-[38px]'
           src='/images/github.svg'
-          className='w-auto h-auto'
           alt='github'
           width={30}
-          height={30}
+          height={38}
         />
       </Link>
-    </div>
+      <div className='hidden fixed top-0 left-0 z-10 w-full h-[75px] bg-[#141416] lg:block' />
+    </>
   );
 }
 

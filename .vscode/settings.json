@@ -5,6 +5,8 @@
     "dependencies",
     "animations",
     "layout",
-    "style"
+    "style",
+    "section",
+    "performance"
   ]
 }

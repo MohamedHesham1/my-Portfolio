@@ -1,21 +1,18 @@
 [
   {
-    "heading": ["Hey, I'm Mohamed,", "a Front-End Developer"]
+    "heading": ["I'm Mohamed, Your", "skilled Developer"]
   },
   {
-    "heading": "Front-End Software Developer"
+    "heading": ["May the code be ", "with you!"]
   },
   {
     "heading": "Skills & Experience"
   },
   {
-    "heading": "Portfolio & Previous Projects",
-    "projectHeading": ["Emart", "Social Media App"]
+    "heading": ["Portfolio & Previous ", "Projects"],
+    "projectHeading": ["E-mart Store", "E-learning Platform"]
   },
   {
-    "heading": "Portfolio & Previous Projects"
-  },
-  {
-    "heading": "Portfolio & Previous Projects"
+    "heading": "Get in Touch"
   }
 ]
