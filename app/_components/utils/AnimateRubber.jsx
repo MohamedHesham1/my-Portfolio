@@ -1,20 +1,12 @@
-import { useState } from 'react';
+import { memo, useState } from 'react';
 
 function AnimateRubber({ children }) {
   const [isHovered, setIsHovered] = useState(false);
 
-  const handleMouseEnter = () => {
-    setIsHovered(true);
-  };
-
-  const handleMouseLeave = () => {
-    setIsHovered(false);
-  };
-
   return (
     <span
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
       className={`hover:text-secondary cursor-default inline-block  ${
         isHovered ? 'animate-rubberBand' : ''
       }`}
@@ -24,4 +16,5 @@ function AnimateRubber({ children }) {
   );
 }
 
-export default AnimateRubber;
+// Each heading letter is one of these; memo skips them on every section change.
+export default memo(AnimateRubber);

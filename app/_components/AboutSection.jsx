@@ -1,5 +1,7 @@
 import info from '@/public/data/info.json';
-import Image from 'next/image';
+import pc from '@/public/images/pc.webp';
+import Image from './utils/Image';
+import { memo } from 'react';
 import AnimateRubber from './utils/AnimateRubber';
 import Rectangle from './utils/Rectangle';
 function About({ direction, destination }) {
@@ -71,7 +73,11 @@ function About({ direction, destination }) {
               : ''
           }  `}
         >
-          <Image src='/images/pc.svg' alt='' width={3879} height={4661} />
+          <Image
+            src={pc}
+            alt=''
+            sizes='(max-width: 767px) 500px, 600px'
+          />
         </div>
       </div>
       <Image
@@ -90,10 +96,11 @@ function About({ direction, destination }) {
         alt=''
         width={518}
         height={577}
+        sizes='200px'
       />
       <Rectangle />
     </div>
   );
 }
 
-export default About;
+export default memo(About);

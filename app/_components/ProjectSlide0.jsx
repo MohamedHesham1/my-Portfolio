@@ -1,8 +1,11 @@
 import info from '@/public/data/info.json';
-import Image from 'next/image';
+import Image from './utils/Image';
+import { memo } from 'react';
 import AnimateRubber from './utils/AnimateRubber';
 
-function ProjectSlide0({ direction, destination, slideIndex, setNavigate }) {
+// `slide` is the last horizontal move ({ from, to } slide indexes), set in
+// onSlideLeave so the classes apply as the move starts.
+function ProjectSlide0({ direction, destination, slide, setNavigate }) {
   return (
     <div className='container flex h-screen items-center'>
       <div
@@ -18,9 +21,9 @@ function ProjectSlide0({ direction, destination, slideIndex, setNavigate }) {
       >
         <div
           className={`text-wrapper ${
-            direction && window.location.hash === '#projects/1'
+            slide?.to === 1
               ? 'animate-fadeOutLeftBig animate-duration-[1.8s]'
-              : direction && slideIndex === 2
+              : slide?.from === 1
               ? 'animate-slideInLeft animate-duration-[0.9s] animate-delay-[0.4s]'
               : ''
           } `}
@@ -93,9 +96,9 @@ function ProjectSlide0({ direction, destination, slideIndex, setNavigate }) {
       />
       <Image
         className={`absolute top-[330px] right-[73%] z-[-1] ${
-          direction && window.location.hash === '#projects/1'
+          slide?.to === 1
             ? 'animate-fadeOutLeftBig animate-duration-[1.4s] animate-delay-[0.3s]'
-            : direction && slideIndex === 2
+            : slide?.from === 1
             ? 'animate-slideInLeft animate-duration-[0.7s] animate-delay-[0.2s]'
             : ''
         }`}
@@ -109,4 +112,4 @@ function ProjectSlide0({ direction, destination, slideIndex, setNavigate }) {
   );
 }
 
-export default ProjectSlide0;
+export default memo(ProjectSlide0);

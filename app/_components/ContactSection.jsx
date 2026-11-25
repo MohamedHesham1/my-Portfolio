@@ -1,4 +1,5 @@
-import Image from 'next/image';
+import Image from './utils/Image';
+import { memo } from 'react';
 import Link from 'next/link';
 import Globe from './utils/GlobeWrapper';
 import RectangleRotate from './utils/RectangleRotate';
@@ -61,10 +62,16 @@ function ContactSection({ direction }) {
         alt=''
         width={424}
         height={351}
+        sizes='150px'
       />
 
-      <div className='rectangle absolute top-[-400px] right-[-550px] blur-[6px] opacity-70 -z-10 lg:hidden'>
-        <Image src='/images/rectangle.svg' alt='' width={839} height={829} />
+      <div className='rectangle absolute top-[-400px] right-[-550px] opacity-70 -z-10 lg:hidden'>
+        <Image
+          src='/images/rectangle-blur.webp'
+          alt=''
+          width={839}
+          height={829}
+        />
       </div>
       <div className='md:hidden'>
         <RectangleRotate />
@@ -73,4 +80,4 @@ function ContactSection({ direction }) {
   );
 }
 
-export default ContactSection;
+export default memo(ContactSection);

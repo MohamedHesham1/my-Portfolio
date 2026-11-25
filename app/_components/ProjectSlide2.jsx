@@ -1,15 +1,21 @@
 import info from '@/public/data/info.json';
 import iphone from '@/public/images/iphone14.webp';
-import Image from 'next/image';
+import Image from './utils/Image';
+import { memo } from 'react';
 import AnimateRubber from './utils/AnimateRubber';
 
-function ProjectSlide2({ direction, destination, slideIndexS }) {
+// `slide` is the last horizontal move ({ from, to } slide indexes).
+// Images here use loading='eager'. This slide sits off-screen to the side,
+// where the browser's lazy loading doesn't look ahead, so lazy images only
+// started loading once the slide moved in and popped in late.
+function ProjectSlide2({ direction, destination, slide }) {
   return (
     <div className='overflow-hidden'>
       <div className='container flex h-screen items-center justify-between relative lg:flex-col lg:justify-center sm:gap-6'>
         <Image
           className={`absolute z-[-1] top-[-398px] left-[18%] xl:hidden`}
           src='/images/side-dots.png'
+          loading='eager'
           alt=''
           width={255}
           height={1678}
@@ -25,9 +31,9 @@ function ProjectSlide2({ direction, destination, slideIndexS }) {
         >
           <div
             className={` ${
-              direction && slideIndexS === 2
+              slide?.from === 1
                 ? 'animate-slideInRight animate-duration-[0.6s] '
-                : direction && window.location.hash === '#projects/1'
+                : slide?.to === 1
                 ? 'animate-fadeOutRightBig animate-duration-[1.2s] animate-delay-[0.3s]'
                 : ''
             } `}
@@ -35,7 +41,9 @@ function ProjectSlide2({ direction, destination, slideIndexS }) {
             <Image
               className={` max-w-[700px] max-h-[420px] xl:w-full`}
               src={iphone}
+              loading='eager'
               alt='e-learning application'
+              sizes='700px'
             />
           </div>
         </div>
@@ -50,9 +58,9 @@ function ProjectSlide2({ direction, destination, slideIndexS }) {
         >
           <div
             className={` ${
-              direction && slideIndexS === 2
+              slide?.from === 1
                 ? 'animate-slideInRight animate-duration-[0.8s] animate-delay-[0.8s]'
-                : direction && window.location.hash === '#projects/1'
+                : slide?.to === 1
                 ? 'animate-fadeOutRightBig animate-duration-[1.6s]'
                 : ''
             } `}
@@ -82,6 +90,7 @@ function ProjectSlide2({ direction, destination, slideIndexS }) {
                   <p>View the code</p>
                   <Image
                     src='/images/arrow-white.svg'
+                    loading='eager'
                     alt=''
                     width={24}
                     height={24}
@@ -98,6 +107,7 @@ function ProjectSlide2({ direction, destination, slideIndexS }) {
                   <p>Visit the app</p>
                   <Image
                     src='/images/arrow-orange.svg'
+                    loading='eager'
                     alt=''
                     width={24}
                     height={24}
@@ -113,4 +123,4 @@ function ProjectSlide2({ direction, destination, slideIndexS }) {
   );
 }
 
-export default ProjectSlide2;
+export default memo(ProjectSlide2);

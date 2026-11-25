@@ -2,6 +2,65 @@
 @tailwind components;
 @tailwind utilities;
 
+/*
+ * Compositor-friendly overrides for animated-tailwindcss keyframes.
+ * The library versions animate `visibility` and read `var(--animate-distance)`,
+ * which forces Chrome to run these on the main thread (style recalc every
+ * frame for up to 3.6s per section change). Same motion, transform/opacity only.
+ */
+@keyframes fadeInDownBig {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -1000px, 0);
+  }
+}
+@keyframes fadeOutUpBig {
+  to {
+    opacity: 0;
+    transform: translate3d(0, -1000px, 0);
+  }
+}
+@keyframes fadeOutDownBig {
+  to {
+    opacity: 0;
+    transform: translate3d(0, 1000px, 0);
+  }
+}
+@keyframes fadeOutLeftBig {
+  to {
+    opacity: 0;
+    transform: translate3d(-2000px, 0, 0);
+  }
+}
+@keyframes fadeOutRightBig {
+  to {
+    opacity: 0;
+    transform: translate3d(2000px, 0, 0);
+  }
+}
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+  }
+}
+@keyframes fadeOutUp {
+  to {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+}
+@keyframes fadeOutDown {
+  to {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+}
+@keyframes slideOutUp {
+  to {
+    transform: translate3d(0, -100%, 0);
+  }
+}
+
 /* layout */
 html {
   transition: font-size 0.3s ease-in-out;

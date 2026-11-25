@@ -18,6 +18,8 @@ const App = () => {
   const [direction, setDirection] = useState(null);
   const [destination, setDestination] = useState(null);
   const [navigate, setNavigate] = useState(false);
+  // Last horizontal move in the projects section, drives the slide animations.
+  const [slide, setSlide] = useState(null);
   const fullpageApiRef = useRef(null);
 
   useEffect(() => {
@@ -30,6 +32,10 @@ const App = () => {
     },
     []
   );
+
+  const handleSlideLeave = useCallback((section, origin, destination) => {
+    setSlide({ from: origin.index, to: destination.index });
+  }, []);
 
   const handleLeave = useCallback(
     (origin, destination, direction) => {
@@ -71,7 +77,7 @@ const App = () => {
             licenseKey='OPEN-SOURCE-GPLV3-LICENSE'
             afterSlideLoad={handleSlideLoad}
             onLeave={handleLeave}
-            onSlideLeave={() => {}}
+            onSlideLeave={handleSlideLeave}
             render={({ fullpageApi }) => {
               fullpageApiRef.current = fullpageApi;
 
@@ -91,22 +97,18 @@ const App = () => {
                       <ProjectSlide0
                         direction={direction}
                         destination={destination}
-                        slideIndex={slideIndex}
+                        slide={slide}
                         setNavigate={setNavigate}
                       />
                     </div>
                     <div className='slide fp-auto-height-responsive'>
-                      <ProjectSlide1
-                        direction={direction}
-                        destination={destination}
-                        slideIndex={slideIndex}
-                      />
+                      <ProjectSlide1 slide={slide} />
                     </div>
                     <div className='slide fp-auto-height-responsive'>
                       <ProjectSlide2
                         direction={direction}
                         destination={destination}
-                        slideIndex={slideIndex}
+                        slide={slide}
                       />
                     </div>
                   </section>

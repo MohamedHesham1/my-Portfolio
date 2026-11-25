@@ -1,8 +1,8 @@
 'use client';
 import logo from '@/public/images/logo.webp';
-import Image from 'next/image';
+import Image from './utils/Image';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { memo, useEffect, useState } from 'react';
 
 function Overlay({ destination, setNavigate }) {
   const [linePosition, setLinePosition] = useState(0);
@@ -26,7 +26,7 @@ function Overlay({ destination, setNavigate }) {
         onClick={() => handleLinkClick(0)}
       >
         <a href='#home'>
-          <Image src={logo} alt='logo' />
+          <Image src={logo} alt='logo' sizes='160px' priority />
         </a>
       </header>
       <aside className='text-primary z-20 fixed right-12 top-0 my-12 lg:top-[-18px] sm:top-[-20px] sm:right-6'>
@@ -120,4 +120,4 @@ function Overlay({ destination, setNavigate }) {
   );
 }
 
-export default Overlay;
+export default memo(Overlay);
