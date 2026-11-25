@@ -1,6 +1,7 @@
 import info from '@/public/data/info.json';
-import myPhoto from '@/public/images/my-photo.webp';
-import Image from 'next/image';
+import heroPhoto from '@/public/images/hero-photo.webp';
+import Image from './utils/Image';
+import { memo } from 'react';
 import AnimateRubber from './utils/AnimateRubber';
 import RectangleRotate from './utils/RectangleRotate';
 
@@ -28,6 +29,7 @@ function Home({ direction }) {
             alt=''
             width={494}
             height={441}
+            sizes='150px'
             quality={80}
           />
           <Image
@@ -42,6 +44,7 @@ function Home({ direction }) {
             alt=''
             width={424}
             height={351}
+            sizes='200px'
             quality={80}
           />
         </div>
@@ -91,11 +94,14 @@ function Home({ direction }) {
               : ''
           }  `}
         >
+          {/* Frame and glow are baked into the image (transparent webp), so no
+              CSS filter is needed. `relative` keeps it painted above the
+              absolutely positioned decorative dots. */}
           <Image
-            className='max-w-[600px] w-full drop-shadow-[-12px_5px_50px_rgba(28,95,154,0.4)]
-            md:max-w-[400px]'
-            src={myPhoto}
+            className='relative max-w-[600px] w-full md:max-w-[400px]'
+            src={heroPhoto}
             alt="Mohamed's photo"
+            sizes='(max-width: 767px) 400px, 600px'
             priority
           />
         </div>
@@ -105,4 +111,4 @@ function Home({ direction }) {
   );
 }
 
-export default Home;
+export default memo(Home);
